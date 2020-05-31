@@ -14,6 +14,7 @@ dwm_cmus () {
         DURATION=$(cmus-remote -Q | grep -a '^duration' | awk '{gsub("duration ", "");print}')
         STATUS=$(cmus-remote -Q | grep -a '^status' | awk '{gsub("status ", "");print}')
         SHUFFLE=$(cmus-remote -Q | grep -a '^set shuffle' | awk '{gsub("set shuffle ", "");print}')
+        #REPEAT=$(cmus-remote -Q | grep -a '^set repeat' | awk '{gsub("set repeat", "");print}')
 
         if [ "$IDENTIFIER" = "unicode" ]; then
             if [ "$STATUS" = "playing" ]; then

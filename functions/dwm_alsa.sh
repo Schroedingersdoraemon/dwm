@@ -6,6 +6,16 @@
 
 # Dependencies: alsa-utils
 
+#dwm_alsa() {
+#	volume="$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
+#	if test "$volume" -gt 0
+#	then
+#		echo -e "\uE05D${volume}"
+#	else
+#		echo -e "Mute"
+#	fi
+#}
+
 dwm_alsa () {
     VOL=$(amixer get Master | tail -n1 | sed -r "s/.*\[(.*)%\].*/\1/")
     printf "%s" "$SEP1"

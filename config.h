@@ -88,6 +88,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *roficmd[]  = { "rofi", "-show", "run", NULL };
 static const char *jgmenucmd[] = { "jgmenu_run", NULL };
+static const char *webcamcmd[] = { "/home/dylan/scripts/webcam.sh", NULL};
 
 static const char scratchpadname[] = "scratchpad";
 //static const char *scratchpadcmd[] = { "kitty", NULL };
@@ -105,12 +106,19 @@ static const char *mutevol[] = { "/home/dylan/prog/dwm/functions/vol-toggle.sh",
 //add your own lockscreen script here
 static const char *lockscreencmd[] = { "/home/dylan/scripts/lockscreen.sh" };
 
+static const char *wpchgcmd[] = {"feh", "--bg-fill", "--random", "/home/dylan/Pictures/wallpapers"};
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	//{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_r,      spawn,          {.v = roficmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_g,      spawn,          {.v = jgmenucmd } },
+
+	{ MODKEY|ControlMask,           XK_w,      spawn,          {.v = webcamcmd} },
+
+	//{ Mod1Mask|ControlMask,         XK_c,      spawn,          {.v = wpchgcmd} },
+	{ 0,                            XK_F7,      spawn,          {.v = wpchgcmd} },
 
 	{ MODKEY,                       XK_BackSpace,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
@@ -166,7 +174,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_c,      setlayout,      {.v = &layouts[3]} },
 
-	{ MODKEY,                       XK_t,      fullscreen,     {0} },
+	{ MODKEY,                       XK_f,      fullscreen,     {0} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 
