@@ -64,25 +64,12 @@ export IDENTIFIER="unicode"
 #. "$DIR/functions/dwm_ccurse.sh"
 . "$DIR/functions/dwm_date.sh"
 
-
-
-#dwm_weather() {
-#    LOCATION=baoji
-#
-#    printf "%s" "$SEP1"
-#    if [ "$IDENTIFIER" = "unicode" ]; then
-#        printf "%s" "$(curl -s wttr.in/$LOCATION?format=1)"
-#    else
-#        printf "WEA %s" "$(curl -s wttr.in/$LOCATION?format=1 | grep -o "[0-9].*")"
-#    fi
-#    printf "%s\n" "$SEP2"
-#}
-
-
-
-#xsetroot -name "💿 $(print_mem)  [🌐🌏 ⬇️$vel_recv ⬆️$vel_trans]  $(dwm_alsa)  [$(print_bat)]  📆 $(print_date) "
-#xsetroot -name "💿 $(print_mem)  [🌏 ⬇️$vel_recv ⬆️$vel_trans]  $(dwm_alsa)  [$(print_bat)]  📆 $(print_date) [$(dwm_weather)]"
-#xsetroot -name "💿 $(dwm_resources)  [🌏 ⬇️$vel_recv ⬆️$vel_trans]  $(dwm_alsa)  [$(print_bat)]  $(dwm_date)  [$(dwm_weather)]"
+ping -c 1 www.baidu.com > /dev/null 2>&1
+if [ $? -eq 0 ];then
+    WEATHER=$(dwm_weather)
+else
+    WEATHER=""
+fi
 
 while true
 do
@@ -97,7 +84,8 @@ do
     vel_recv=$(get_velocity $received_bytes $old_received_bytes $now)
     vel_trans=$(get_velocity $transmitted_bytes $old_transmitted_bytes $now)
     
-    xsetroot -name "$(dwm_cmus) 💿 $(dwm_resources) [🌏 ⬇️$vel_recv ⬆️$vel_trans] $(dwm_alsa) [$(dwm_battery)] $(dwm_date) $(dwm_weather)"
+    #xsetroot -name "$(dwm_cmus) 💿 $(dwm_resources) [🌏 ⬇️$vel_recv ⬆️$vel_trans] $(dwm_alsa) [$(dwm_battery)] $(dwm_date) $(dwm_weather)"
+    xsetroot -name "$(dwm_cmus)  💿 $(dwm_resources) [🌏 ⬇️$vel_recv ⬆️$vel_trans] $(dwm_alsa) [$(dwm_battery)] $(dwm_date) $WEATHER"
 
     sleep 1
 
