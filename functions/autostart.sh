@@ -1,6 +1,7 @@
 #!/bin/bash
 
 /home/dylan/scripts/backgrounds.sh &
+/home/dylan/scripts/wifi-auto.sh &
 /home/dylan/prog/dwm/dwm-status.sh &
 
 albert &
