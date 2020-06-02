@@ -64,12 +64,21 @@ export IDENTIFIER="unicode"
 #. "$DIR/functions/dwm_ccurse.sh"
 . "$DIR/functions/dwm_date.sh"
 
+# for temporary status show
+xsetroot -name "$(dwm_cmus) 💿 $(dwm_resources) $(dwm_alsa) [$(dwm_battery)] $(dwm_date)"
+
+EXIT=$(pgrep -x wpa_supplicant|wc -l)
+if [ $EXIT -eq 0 ]; then
+    sleep 10
+fi
+
 ping -c 1 www.baidu.com > /dev/null 2>&1
 if [ $? -eq 0 ];then
     WEATHER=$(dwm_weather)
 else
     WEATHER=""
 fi
+
 
 while true
 do
