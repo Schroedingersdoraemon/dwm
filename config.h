@@ -103,6 +103,10 @@ static const char *upvol[]   = { "/home/dylan/prog/dwm/functions/vol-up.sh",  NU
 static const char *downvol[] = { "/home/dylan/prog/dwm/functions/vol-down.sh",  NULL };
 static const char *mutevol[] = { "/home/dylan/prog/dwm/functions/vol-toggle.sh",  NULL };
 
+static const char *cmustoggle[] = { "/home/dylan/prog/dwm/functions/cmus-toggle.sh", NULL };
+static const char *cmusnext[] = { "/home/dylan/prog/dwm/functions/cmus-next.sh", NULL };
+static const char *cmusprev[] = { "/home/dylan/prog/dwm/functions/cmus-prev.sh", NULL };
+
 //add your own lockscreen script here
 static const char *lockscreencmd[] = { "/home/dylan/scripts/lockscreen.sh" };
 
@@ -110,8 +114,8 @@ static const char *wpchgcmd[] = {"feh", "--bg-fill", "--random", "/home/dylan/Pi
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	//{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_r,      spawn,          {.v = roficmd } },
+	{ Mod1Mask,                     XK_d,      spawn,          {.v = dmenucmd } },
+	{ Mod1Mask,                     XK_r,      spawn,          {.v = roficmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_g,      spawn,          {.v = jgmenucmd } },
 
@@ -136,9 +140,13 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Print,  spawn,          {.v = scrshotwincmd} },
 	{ MODKEY|ShiftMask,             XK_Print,  spawn,          {.v = scrshotselectcmd} },
 
-	{ 0,                   XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
-	{ 0,                   XF86XK_AudioMute,        spawn,          {.v = mutevol } },
-	{ 0,                   XF86XK_AudioRaiseVolume, spawn,          {.v = upvol   } },
+	{ 0,                            XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
+	{ 0,                            XF86XK_AudioMute,        spawn,          {.v = mutevol } },
+	{ 0,                            XF86XK_AudioRaiseVolume, spawn,          {.v = upvol   } },
+
+	{ 0,                            XF86XK_AudioPlay,        spawn,          {.v = cmustoggle} },
+	{ 0,                            XF86XK_AudioPrev,        spawn,          {.v = cmusprev} },
+	{ 0,                            XF86XK_AudioNext,        spawn,          {.v = cmusnext} },
 
     { MODKEY|ControlMask,             XK_l,       spawn,         {.v = lockscreencmd}},
 
@@ -175,8 +183,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_c,      setlayout,      {.v = &layouts[3]} },
 
 	{ MODKEY,                       XK_f,      fullscreen,     {0} },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+	{ MODKEY|ShiftMask,             XK_space,  setlayout,      {0} },
+	{ MODKEY,                       XK_space,  togglefloating, {0} },
 
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
