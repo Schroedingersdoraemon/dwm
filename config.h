@@ -103,6 +103,8 @@ static const char *upvol[]   = { "/home/dylan/prog/dwm/functions/vol-up.sh",  NU
 static const char *downvol[] = { "/home/dylan/prog/dwm/functions/vol-down.sh",  NULL };
 static const char *mutevol[] = { "/home/dylan/prog/dwm/functions/vol-toggle.sh",  NULL };
 
+static const char *cmuscmd[] = { "kitty", "cmus" };
+
 static const char *cmustoggle[] = { "/home/dylan/prog/dwm/functions/cmus-toggle.sh", NULL };
 static const char *cmusnext[] = { "/home/dylan/prog/dwm/functions/cmus-next.sh", NULL };
 static const char *cmusprev[] = { "/home/dylan/prog/dwm/functions/cmus-prev.sh", NULL };
@@ -111,6 +113,7 @@ static const char *cmusprev[] = { "/home/dylan/prog/dwm/functions/cmus-prev.sh",
 static const char *lockscreencmd[] = { "/home/dylan/scripts/lockscreen.sh" };
 
 static const char *wpchgcmd[] = {"feh", "--bg-fill", "--random", "/home/dylan/Pictures/wallpapers"};
+
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -123,6 +126,8 @@ static Key keys[] = {
 
 	//{ Mod1Mask|ControlMask,         XK_c,      spawn,          {.v = wpchgcmd} },
 	{ 0,                            XK_F7,      spawn,          {.v = wpchgcmd} },
+
+	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = cmuscmd} },
 
 	{ MODKEY,                       XK_BackSpace,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
