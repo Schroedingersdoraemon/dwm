@@ -69,7 +69,7 @@ xsetroot -name "$(dwm_cmus) 💿 $(dwm_resources) $(dwm_alsa) [$(dwm_battery)] $
 
 EXIT=$(pgrep -x wpa_supplicant|wc -l)
 if [ $EXIT -eq 0 ]; then
-    sleep 10
+    sleep 15
 fi
 
 ping -c 1 www.baidu.com > /dev/null 2>&1
