@@ -114,6 +114,8 @@ static const char *lockscreencmd[] = { "/home/dylan/scripts/lockscreen.sh" };
 
 static const char *wpchgcmd[] = {"feh", "--bg-fill", "--random", "/home/dylan/Pictures/wallpapers"};
 
+static const char *togglescrkey[] = { "/home/dylan/prog/dwm/functions/toggle_scrkey.sh", NULL };
+
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -128,6 +130,8 @@ static Key keys[] = {
 	{ 0,                            XK_F7,      spawn,          {.v = wpchgcmd} },
 
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = cmuscmd} },
+
+	{ Mod1Mask,                     XK_s,      spawn,          {.v = togglescrkey} },
 
 	{ MODKEY,                       XK_BackSpace,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
