@@ -67,17 +67,22 @@ export IDENTIFIER="unicode"
 # for temporary status show
 xsetroot -name "$(dwm_cmus) 💿 $(dwm_resources) $(dwm_alsa) [$(dwm_battery)] $(dwm_date)"
 
-EXIT=$(pgrep -x wpa_supplicant|wc -l)
-if [ $EXIT -eq 0 ]; then
-    sleep 15
-fi
+#EXIT=$(pgrep -x wpa_supplicant|wc -l)
+#if [ $EXIT -eq 0 ]; then
+#    WEATHER=$(dwm_weather)
+#    sleep 13
+#fi
 
-ping -c 1 www.baidu.com > /dev/null 2>&1
-if [ $? -eq 0 ];then
-    WEATHER=$(dwm_weather)
-else
-    WEATHER=""
-fi
+while true
+do
+    ping -c 1 www.baidu.com > /dev/null 2>&1
+    if [ $? -eq 0 ];then
+        WEATHER=$(dwm_weather)
+        break
+    else
+        sleep 2
+    fi
+done
 
 
 while true
