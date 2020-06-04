@@ -75,12 +75,15 @@ xsetroot -name "$(dwm_cmus) 💿 $(dwm_resources) [🌏 ⬇️ 0kb/s ⬆️ 0kb/
 
 while true
 do
+    if [ $(pgrep -x wpa_supplicant|wc -l) -eq 1 ]; then
+        break
+    fi
     ping -c 1 www.baidu.com > /dev/null 2>&1
     if [ $? -eq 0 ];then
         WEATHER=$(dwm_weather)
         break
     else
-        sleep 2
+        sleep 1
     fi
 done
 
