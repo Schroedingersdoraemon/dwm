@@ -6,11 +6,23 @@
  \__,_| \_/\_/ |_| |_| |_|
                           
 
+Self maintained dwm with some nice patches
+
 I bet it's the most elegant dwm you've ever seen!
 
+******************
+*  Requirements  *
+******************
+Xlib header files.
 
-1.  vim config.mk   # to match your machine settings
 
-2.  sudo make clean install     #build and install
+******************
+*  Installation  *
+******************
+Edit config.mk to match your local setup (st is installed into
+the /usr/local namespace by default).
 
-3.  exec dwm    # add it to your xinitrc
+Afterwards enter the following command to build and install st (if
+necessary as root):
+
+    make clean install
