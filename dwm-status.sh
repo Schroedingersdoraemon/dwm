@@ -65,12 +65,12 @@ export IDENTIFIER="unicode"
 . "$DIR/functions/dwm_date.sh"
 
 # for temporary status show
-xsetroot -name "$(dwm_cmus) 💿 $(dwm_resources) $(dwm_alsa) [$(dwm_battery)] $(dwm_date)"
+xsetroot -name "$(dwm_cmus) 💿 $(dwm_resources) [🌏 ⬇️ 0kb/s ⬆️ 0kb/s] $(dwm_alsa) [$(dwm_battery)] $(dwm_date)"
 
 #EXIT=$(pgrep -x wpa_supplicant|wc -l)
 #if [ $EXIT -eq 0 ]; then
 #    WEATHER=$(dwm_weather)
-#    sleep 13
+##    sleep 13
 #fi
 
 while true
@@ -98,8 +98,7 @@ do
     vel_recv=$(get_velocity $received_bytes $old_received_bytes $now)
     vel_trans=$(get_velocity $transmitted_bytes $old_transmitted_bytes $now)
     
-    #xsetroot -name "$(dwm_cmus) 💿 $(dwm_resources) [🌏 ⬇️$vel_recv ⬆️$vel_trans] $(dwm_alsa) [$(dwm_battery)] $(dwm_date) $(dwm_weather)"
-    xsetroot -name "$(dwm_cmus) 💿 $(dwm_resources) [🌏 ⬇️$vel_recv ⬆️$vel_trans] $(dwm_alsa) [$(dwm_battery)] $(dwm_date) $WEATHER"
+    xsetroot -name "$(dwm_cmus) 💿 $(dwm_resources) [🌏 ⬇️$vel_recv ⬆️$vel_trans] $(dwm_alsa) [$(dwm_battery)] $(dwm_date) $(dwm_weather)"
 
     sleep 1
 
