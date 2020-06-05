@@ -22,7 +22,6 @@ Xlib header files.
 Edit config.mk to match your local setup (st is installed into
 the /usr/local namespace by default).
 
-Afterwards enter the following command to build and install st (if
-necessary as root):
+Afterwards enter the following command to build and install st
 
-    make clean install
+    make clean install (as root)
