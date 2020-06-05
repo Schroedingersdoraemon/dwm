@@ -157,7 +157,7 @@ static Key keys[] = {
 	{ 0,                            XF86XK_AudioPrev,        spawn,          {.v = cmusprev} },
 	{ 0,                            XF86XK_AudioNext,        spawn,          {.v = cmusnext} },
 
-    { MODKEY|ControlMask,             XK_l,       spawn,         {.v = lockscreencmd}},
+    { MODKEY|ControlMask,           XK_l,      spawn,         {.v = lockscreencmd}},
 
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
