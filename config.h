@@ -71,6 +71,8 @@ static const Layout layouts[] = {
 	{ "|||",      col },
 };
 
+/* Relative Path*/
+
 /* key definitions */
 #define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
