@@ -75,15 +75,14 @@ xsetroot -name "$(dwm_cmus) 💿 $(dwm_resources) [🌏 ⬇️ 0kb/s ⬆️ 0kb/
 
 while true
 do
-    if [ $(pgrep -x wpa_supplicant|wc -l) -eq 1 ]; then
-        break
-    fi
     ping -c 1 www.baidu.com > /dev/null 2>&1
     if [ $? -eq 0 ];then
+        xsetroot -name "Retriving Weather Data..."
         WEATHER=$(dwm_weather)
+        sleep 2
         break
     else
-        sleep 1
+        sleep 2
     fi
 done
 
@@ -95,13 +94,13 @@ do
     old_received_bytes=$received_bytes
     old_transmitted_bytes=$transmitted_bytes
     old_time=$now
-    
+
     get_bytes
     # Calculates speeds
     vel_recv=$(get_velocity $received_bytes $old_received_bytes $now)
     vel_trans=$(get_velocity $transmitted_bytes $old_transmitted_bytes $now)
-    
-    xsetroot -name "$(dwm_cmus) 💿 $(dwm_resources) [🌏 ⬇️$vel_recv ⬆️$vel_trans] $(dwm_alsa) [$(dwm_battery)] $(dwm_date) $(dwm_weather)"
+
+    xsetroot -name "$(dwm_cmus) 💿 $(dwm_resources) [🌏 ⬇️$vel_recv ⬆️$vel_trans] $(dwm_alsa) [$(dwm_battery)] $(dwm_date) $WEATHER"
 
     sleep 1
 
