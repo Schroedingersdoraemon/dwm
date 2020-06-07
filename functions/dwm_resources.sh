@@ -11,10 +11,15 @@ dwm_resources () {
     # CPU temperature
     #CPU=$(sysctl -n hw.sensors.cpu0.temp0 | cut -d. -f1)
 
+#    if [ "$IDENTIFIER" = "unicode" ]; then
+#        printf "%s/%s" "$MEMUSED" "$MEMTOT"
+#    else
+#        printf "%s/%s" "$MEMUSED" "$MEMTOT"
+#    fi
     if [ "$IDENTIFIER" = "unicode" ]; then
-        printf "%s/%s" "$MEMUSED" "$MEMTOT"
+        printf "%s" "$MEMUSED"
     else
-        printf "%s/%s" "$MEMUSED" "$MEMTOT"
+        printf "%s" "$MEMUSED"
     fi
 
 	#memfree=$(($(grep -m1 'MemAvailable:' /proc/meminfo | awk '{print $2}') / 1024))
