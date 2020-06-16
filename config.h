@@ -108,7 +108,7 @@ static const char *upvol[]   = { "/home/dylan/prog/dwm/functions/vol-up.sh",  NU
 static const char *downvol[] = { "/home/dylan/prog/dwm/functions/vol-down.sh",  NULL };
 static const char *mutevol[] = { "/home/dylan/prog/dwm/functions/vol-toggle.sh",  NULL };
 
-static const char *cmuscmd[] = { "kitty", "cmus" };
+static const char *cmuscmd[] = { "st", "cmus" };
 
 static const char *cmustoggle[] = { "/home/dylan/prog/dwm/functions/cmus-toggle.sh", NULL };
 static const char *cmusnext[] = { "/home/dylan/prog/dwm/functions/cmus-next.sh", NULL };
