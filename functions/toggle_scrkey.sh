@@ -1,3 +1,5 @@
+#!/bin/sh
+
 RUN="$(pgrep -x screenkey|wc -l)"
 ID="$(pgrep -x screenkey)"
 case $RUN in
