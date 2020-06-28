@@ -8,12 +8,14 @@
 
 Self maintained dwm with some nice patches
 
-I bet it's the most elegant dwm you've ever seen!
+I bet it's the most ELEGANT window manager you've ever seen!
 
 ******************
 *  Requirements  *
 ******************
 Xlib header files.
+( There might be some other libs needed that I can only recall when seeing installation errors.
+((So feel free to commit any issue
 
 
 ******************
