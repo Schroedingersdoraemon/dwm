@@ -19,9 +19,9 @@ Xlib header files.
 ******************
 *  Installation  *
 ******************
-Edit config.mk to match your local setup (st is installed into
+Edit config.mk to match your local setup (dwm is installed into
 the /usr/local namespace by default).
 
-Afterwards enter the following command to build and install st
+Afterwards enter the following command to build and install dwm
 
     make clean install (as root)
