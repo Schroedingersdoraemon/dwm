@@ -2,4 +2,3 @@ dwm
 *.o
 *.rej
 *.orig
-patches/wget-log
