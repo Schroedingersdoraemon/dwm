@@ -1834,8 +1834,6 @@ run(void)
 
 void
 runAutostart(void) {
-	//system("cd ~/scripts; ./backgrounds.sh &");
-	//system("cd ~/prog/dwm; ./dwm-status.sh &");
 	system("cd ~/prog/dwm/functions; ./autostart.sh &");
 }
 

@@ -79,10 +79,9 @@ do
     if [ $? -eq 0 ];then
         xsetroot -name "Retriving Weather Data..."
         WEATHER=$(dwm_weather)
-        sleep 1
         break
     else
-        sleep 2
+        sleep 1
     fi
 done
 

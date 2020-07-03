@@ -117,7 +117,7 @@ static const char *cmusprev[] = { "/home/dylan/prog/dwm/functions/cmus-prev.sh",
 //add your own lockscreen script here
 static const char *lockscreencmd[] = { "/home/dylan/scripts/lockscreen.sh" };
 
-static const char *wpchgcmd[] = {"feh", "--bg-fill", "--random", "/home/dylan/Pictures/wallpapers"};
+static const char *wpchgcmd[] = { "/home/dylan/scripts/backgrounds/wp-folder-ch.sh", NULL };
 
 static const char *togglescrkey[] = { "/home/dylan/prog/dwm/functions/toggle_scrkey.sh", NULL };
 
@@ -131,7 +131,6 @@ static Key keys[] = {
 
 	{ MODKEY|ControlMask,           XK_w,      spawn,          {.v = webcamcmd} },
 
-	//{ Mod1Mask|ControlMask,         XK_c,      spawn,          {.v = wpchgcmd} },
 	{ 0,                            XK_F7,      spawn,          {.v = wpchgcmd} },
 
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = cmuscmd} },
