@@ -17,7 +17,10 @@ Xlib header files.
 ( There might be some other libs needed that I can only recall when seeing installation errors.
 ((So feel free to commit any issue
 
-For Ubuntu users, you must install packages as below:
+For Ubuntu users, you may have some other packages to install as below:
+```
+sudo apt install libx11-dev libxft-dev libxinerama-dev libx11-xcb-dev libxcb-res0-dev
+```
 1. libx11-dev       X11 client-side library (development headers)
 2. libxft-dev       FreeType-based font drawing library for X (development headers)
 3. libxinerama-dev  X11 Xinerama extension library (development headers)
