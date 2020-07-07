@@ -65,14 +65,6 @@ export IDENTIFIER="unicode"
 . "$DIR/functions/dwm_date.sh"
 
 # for temporary status show
-xsetroot -name "$(dwm_cmus) 💿 $(dwm_resources) [🌏 ⬇️ 0kb/s ⬆️ 0kb/s] $(dwm_alsa) [$(dwm_battery)] $(dwm_date)"
-
-#EXIT=$(pgrep -x wpa_supplicant|wc -l)
-#if [ $EXIT -eq 0 ]; then
-#    WEATHER=$(dwm_weather)
-##    sleep 13
-#fi
-
 while true
 do
     ping -c 1 www.baidu.com > /dev/null 2>&1
@@ -81,9 +73,21 @@ do
         WEATHER=$(dwm_weather)
         break
     else
-        sleep 1
+        xsetroot -name "$(dwm_cmus) 💿 $(dwm_resources) [🌏 ⬇️ 0kb/s ⬆️ 0kb/s] $(dwm_alsa) [$(dwm_battery)] $(dwm_date)"
     fi
+
+    sleep 1
 done
+
+#EXIT=$(pgrep -x wpa_supplicant|wc -l)
+#if [ $EXIT -eq 0 ]; then
+#    WEATHER=$(dwm_weather)
+##    sleep 13
+#fi
+
+#while true
+#do
+#done
 
 
 while true
