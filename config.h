@@ -93,7 +93,6 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *roficmd[]  = { "rofi", "-show", "run", NULL };
-static const char *jgmenucmd[] = { "jgmenu_run", NULL };
 static const char *webcamcmd[] = { "/home/dylan/scripts/webcam.sh", NULL};
 
 static const char scratchpadname[] = "scratchpad";
@@ -101,9 +100,8 @@ static const char scratchpadname[] = "scratchpad";
 //static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, "-d", "60", "20", NULL };
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x25", NULL };
 //
-static const char *scrshotcmd[] = {"i3-scrot", "-d", NULL};
-static const char *scrshotwincmd[] = {"i3-scrot", "-w", NULL};
-static const char *scrshotselectcmd[] = {"i3-scrot", "-s", NULL};
+static const char *scrshotcmd[] = {"flameshot", "full", "-p", "/home/dylan/screenshots", NULL};
+static const char *scrshotselectcmd[] = {"flameshot", "gui", NULL};
 
 static const char *upvol[]   = { "/home/dylan/prog/dwm/functions/vol-up.sh",  NULL };
 static const char *downvol[] = { "/home/dylan/prog/dwm/functions/vol-down.sh",  NULL };
@@ -126,7 +124,6 @@ static Key keys[] = {
 	{ Mod1Mask,                     XK_d,      spawn,          {.v = dmenucmd } },
 	{ Mod1Mask,                     XK_r,      spawn,          {.v = roficmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_g,      spawn,          {.v = jgmenucmd } },
 
 	{ MODKEY|ControlMask,           XK_w,      spawn,          {.v = webcamcmd} },
 
@@ -147,8 +144,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 
 	{ 0,                            XK_Print,  spawn,          {.v = scrshotcmd} },
-	{ MODKEY,                       XK_Print,  spawn,          {.v = scrshotwincmd} },
-	{ MODKEY|ShiftMask,             XK_Print,  spawn,          {.v = scrshotselectcmd} },
+	{ MODKEY,                       XK_Print,  spawn,          {.v = scrshotselectcmd} },
 
 	{ 0,                            XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
 	{ 0,                            XF86XK_AudioMute,        spawn,          {.v = mutevol } },
