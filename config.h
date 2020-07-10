@@ -93,7 +93,6 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *roficmd[]  = { "rofi", "-show", "run", NULL };
-static const char *webcamcmd[] = { "/home/dylan/scripts/webcam.sh", NULL};
 
 static const char scratchpadname[] = "scratchpad";
 //static const char *scratchpadcmd[] = { "kitty", NULL };
@@ -116,20 +115,13 @@ static const char *cmusprev[] = { "/home/dylan/prog/dwm/functions/cmus-prev.sh",
 //add your own lockscreen script here
 static const char *lockscreencmd[] = { "/home/dylan/scripts/lockscreen.sh" };
 
-static const char *togglescrkey[] = { "/home/dylan/prog/dwm/functions/toggle_scrkey.sh", NULL };
-
-
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ Mod1Mask,                     XK_d,      spawn,          {.v = dmenucmd } },
 	{ Mod1Mask,                     XK_r,      spawn,          {.v = roficmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 
-	{ MODKEY|ControlMask,           XK_w,      spawn,          {.v = webcamcmd} },
-
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = cmuscmd} },
-
-	{ Mod1Mask,                     XK_s,      spawn,          {.v = togglescrkey} },
 
 	{ MODKEY,                       XK_BackSpace,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
