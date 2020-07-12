@@ -1,12 +1,11 @@
 Self maintained dwm with some nice patches
 
-I bet it's the most ELEGANT window manager you've ever seen!
-
 ******************
 *  Requirements  *
 ******************
-Xlib header files.
-(So feel free to commit any issue
+**Xlib header files.**
+
+(feel free to commit any issue
 
 
 
