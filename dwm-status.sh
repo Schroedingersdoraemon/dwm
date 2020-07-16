@@ -60,7 +60,6 @@ export IDENTIFIER="unicode"
 #. "$DIR/functions/dwm_jeather.sh"
 #. "$DIR/functions/dwm_vpn.sh"
 #. "$DIR/functions/dwm_network.sh"
-#. "$DIR/functions/dwm_keyboard.sh"
 #. "$DIR/functions/dwm_ccurse.sh"
 . "$DIR/functions/dwm_date.sh"
 
@@ -70,7 +69,9 @@ do
     ping -c 1 www.baidu.com > /dev/null 2>&1
     if [ $? -eq 0 ];then
         xsetroot -name "Retriving Weather Data..."
+        #------------------------------------------------------------
         WEATHER=$(dwm_weather)
+        #------------------------------------------------------------
         break
     else
         xsetroot -name "$(dwm_cmus) 💿 $(dwm_resources) [🌏 ⬇️ 0kb/s ⬆️ 0kb/s] $(dwm_alsa) [$(dwm_battery)] $(dwm_date)"
