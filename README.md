@@ -2,7 +2,7 @@ Self maintained dwm with some nice patches. For dwm status bar functions, cd fun
 
 <br>
 
-### Requirements
+### 1. Requirements
 
 - For **Ubuntu** users, you may executate as below
 ```linux
@@ -22,7 +22,7 @@ to install these packages:
 
 <br>
 
-### Installation
+### 2. Installation
 
 Edit config.mk to match your local setup (dwm is installed into
 the /usr/local namespace by default).
@@ -33,7 +33,7 @@ Afterwards enter the following command to build and install dwm
 
 <br>
 
-### Replenishment
+### 3. Replenishment
 
 
 Edit `config.h` and `dwm.c` to enable dwm and dwm-status function correctly.
