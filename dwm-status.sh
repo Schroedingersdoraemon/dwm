@@ -60,13 +60,17 @@ export IDENTIFIER="unicode"
 #. "$DIR/functions/dwm_jeather.sh"
 #. "$DIR/functions/dwm_vpn.sh"
 #. "$DIR/functions/dwm_network.sh"
-#. "$DIR/functions/dwm_ccurse.sh"
+. "$DIR/functions/dwm_ccurse.sh"
 . "$DIR/functions/dwm_date.sh"
 
 # for temporary status show
+# Considering fetching weather date per second causes the slowness of seconds, I modified the source code:
+# Network is pingable:      fetch weather data, break the loop below
+# Network is not pingable:  cancel display of weather data and speed calculation
 while true
 do
     ping -c 1 www.baidu.com > /dev/null 2>&1
+    # if baidu.com is pingable, fetch weather data
     if [ $? -eq 0 ];then
         xsetroot -name "Retriving Weather Data..."
         #------------------------------------------------------------
@@ -79,17 +83,6 @@ do
 
     sleep 1
 done
-
-#EXIT=$(pgrep -x wpa_supplicant|wc -l)
-#if [ $EXIT -eq 0 ]; then
-#    WEATHER=$(dwm_weather)
-##    sleep 13
-#fi
-
-#while true
-#do
-#done
-
 
 while true
 do
@@ -104,7 +97,7 @@ do
     vel_recv=$(get_velocity $received_bytes $old_received_bytes $now)
     vel_trans=$(get_velocity $transmitted_bytes $old_transmitted_bytes $now)
 
-    xsetroot -name "$(dwm_cmus) 💿 $(dwm_resources) [🌏 ⬇️$vel_recv ⬆️$vel_trans] $(dwm_alsa) [$(dwm_battery)] $(dwm_date) $WEATHER"
+    xsetroot -name "$(dwm_cmus) 💿 $(dwm_resources) [🌏 ⬇️$vel_recv ⬆️$vel_trans] $(dwm_alsa) [$(dwm_battery)] $(dwm_date) $(dwm_ccurse) $WEATHER"
 
     sleep 1
 
