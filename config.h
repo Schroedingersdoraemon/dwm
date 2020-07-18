@@ -95,22 +95,20 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *roficmd[]  = { "rofi", "-show", "run", NULL };
 
 static const char scratchpadname[] = "scratchpad";
-//static const char *scratchpadcmd[] = { "kitty", NULL };
-//static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, "-d", "60", "20", NULL };
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x25", NULL };
 //
 static const char *scrshotcmd[] = {"flameshot", "full", "-p", "/home/dylan/screenshots", NULL};
 static const char *scrshotselectcmd[] = {"flameshot", "gui", NULL};
 
-static const char *upvol[]   = { "/home/dylan/prog/dwm/functions/vol-up.sh",  NULL };
-static const char *downvol[] = { "/home/dylan/prog/dwm/functions/vol-down.sh",  NULL };
-static const char *mutevol[] = { "/home/dylan/prog/dwm/functions/vol-toggle.sh",  NULL };
+static const char *upvol[]   = { "/home/dylan/prog/dwm/functions/vol_up.sh",  NULL };
+static const char *downvol[] = { "/home/dylan/prog/dwm/functions/vol_down.sh",  NULL };
+static const char *mutevol[] = { "/home/dylan/prog/dwm/functions/vol_toggle.sh",  NULL };
 
 static const char *cmuscmd[] = { "st", "cmus" };
 
-static const char *cmustoggle[] = { "/home/dylan/prog/dwm/functions/cmus-toggle.sh", NULL };
-static const char *cmusnext[] = { "/home/dylan/prog/dwm/functions/cmus-next.sh", NULL };
-static const char *cmusprev[] = { "/home/dylan/prog/dwm/functions/cmus-prev.sh", NULL };
+static const char *cmustoggle[] = { "/home/dylan/prog/dwm/functions/cmus_toggle.sh", NULL };
+static const char *cmusnext[] = { "/home/dylan/prog/dwm/functions/cmus_next.sh", NULL };
+static const char *cmusprev[] = { "/home/dylan/prog/dwm/functions/cmus_prev.sh", NULL };
 
 //add your own lockscreen script here
 static const char *lockscreencmd[] = { "/home/dylan/scripts/lockscreen.sh" };
