@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ~/scripts/backgrounds/backgrounds.sh &
-~/prog/dwm/dwm-status.sh &
+~/prog/dwm/dwm_status.sh &
 
 albert &
 compton &
