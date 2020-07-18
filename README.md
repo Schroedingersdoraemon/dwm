@@ -10,11 +10,11 @@ sudo apt install libx11-dev libxft-dev libxinerama-dev libx11-xcb-dev libxcb-res
 ```
 to install these packages:
 
-    1. libx11-dev       X11 client-side library (development headers)
-    2. libxft-dev       FreeType-based font drawing library for X (development headers)
-    3. libxinerama-dev  X11 Xinerama extension library (development headers)
-    4. libx11-xcb-dev   Xlib/XCB interface library (development headers)
-    5. libxcb-res0-dev  X C Binding, res extension, development headers
+    1. libx11-dev       X11 client-side library
+    2. libxft-dev       FreeType-based font drawing library for X
+    3. libxinerama-dev  X11 Xinerama extension library
+    4. libx11-xcb-dev   Xlib/XCB interface library
+    5. libxcb-res0-dev  X C Binding, res extension
 
 <br>
 
