@@ -33,8 +33,86 @@ Afterwards enter the following command to build and install dwm
 
 <br>
 
-### 3. Replenishment
+### 3. Customization
 
+**Bold fonts** indicate the need of modification
 
-Edit `config.h` and `dwm.c` to enable dwm and dwm-status function correctly.
+Patches added:
 
+- alpha
+    - allow dwm to have translucent effect
+    u
+- **autostart**
+    - open your dwm.c
+    - find autostart function
+    - to run a script at startup as below:
+    ```shell
+    void
+    runAutostart(void) {
+        system("cd path/to/your/script; ./autostart.sh &");
+    }
+    ```
+- awesomebar
+    - changes the taskbar to be more like awesome
+- columns
+    - like tilling mode but no gaps
+- fullscreen
+    - apply the monocle layout
+    - hide the bar
+    - current client goes fullscreen
+- hide vacant tags
+    - prevents dwm from drawing tags with no clients
+- noborder
+    - forgot to write, never mind
+- pertag
+    - keeps layout, mwfact, barpos and nmaster per tag
+- view on tag
+    - before patch:
+        - move a client to tag 2
+        - return back to tag1
+    - after:
+        - move a client to tag 2
+        - stay there
+- rotatestack
+    - stack rotation moves a client from the bottom to the top of the stack
+- scratchpad
+    - spawn or restore a floating terminal window, useful to do some temprory typing
+- systray
+    - system tray implementation
+
+### 4. Replenishment
+Things you need to modify in configuration
+- config.h
+    - fonts[] = { "**FONT TO USE**:size=**SIZE**" }
+    - dmenufont [] = { "**FONT TO USE**:size=**SIZE**" }
+        - delete if you don't use dmenu
+    - dmenucmd[] = { "dmenu_run", NULL };
+    - termcmd[]  = { "**YOUR TERMINAL EMULATOR**", NULL };
+    - roficmd[]  = { "rofi", "-show", "run", NULL };
+        - delete if you don't use rofi
+        - delete if you don't use <++>
+    - scrshotcmd[] = {"flameshot", "full", "-p", "**PATH/TO/SCREENSHOTS**", NULL};
+        - install flameshot
+    - scrshotselectcmd[] = {"flameshot", "gui", NULL};
+    - upvol[]   = { "**PATH/TO/SCRIPT**",  NULL };
+    - downvol[] = { "**PATH/TO/SCRIPT**",  NULL };
+    - mutevol[] = { "**PATH/TO/SCRIPT**",  NULL };
+        - the three scripts can be found in repo: **dwm**/functions
+    - cmustoggle [] = {}
+    - cmusnext[] = {}
+    - cmusprev[] = {}
+        - delete the threem *cmus* script if you do not use cmus
+    - lockscreencmd = { "**COMMAND TO LOCK SCREEN**" }
+    - Key keys[] = {}
+        - just modify shortcuts as you like
+
+- dwm.c
+    - autostart
+    ```c
+    void
+    runAutostart(void) {
+        system("cd PATH/TO/DWM/FUNCTIONS; ./autostart.sh &");
+        //pertinent function can be found in my github
+        //Schroedingersdoraemon/dwm/functions
+    }
+    ```
