@@ -90,10 +90,9 @@ Things you need to modify in configuration
     - termcmd[]  = { "**YOUR TERMINAL EMULATOR**", NULL };
     - roficmd[]  = { "rofi", "-show", "run", NULL };
         - delete if you don't use rofi
-        - delete if you don't use <++>
     - scrshotcmd[] = {"flameshot", "full", "-p", "**PATH/TO/SCREENSHOTS**", NULL};
-        - install flameshot
     - scrshotselectcmd[] = {"flameshot", "gui", NULL};
+        - install flameshot
     - upvol[]   = { "**PATH/TO/SCRIPT**",  NULL };
     - downvol[] = { "**PATH/TO/SCRIPT**",  NULL };
     - mutevol[] = { "**PATH/TO/SCRIPT**",  NULL };
