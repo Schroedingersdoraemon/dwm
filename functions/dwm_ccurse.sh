@@ -12,7 +12,7 @@ dwm_ccurse () {
     if $(head -n 1 "$APTSFILE"|grep --quiet 1 "$APTSFILE");
     then
         APPOINTMENT=$(head -n 1 "$APTSFILE" | sed -r 's/\[1\] //')
-        printf "[💡 %s]" "$APPOINTMENT"
+        printf "[💡 %s] " "$APPOINTMENT"
     else
         return 0
     fi
