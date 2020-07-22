@@ -7,3 +7,4 @@ albert &
 compton &
 xfce4-power-manager &
 flameshot &
+birdtray &
