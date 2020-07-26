@@ -80,6 +80,9 @@ Patches added:
 - systray
     - system tray implementation
 
+- switch to tag
+    - switch to a certain tag when a certain program is opened
+
 ### 4. Replenishment
 Things you need to modify in configuration
 - config.h
