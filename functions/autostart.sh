@@ -8,3 +8,4 @@ compton &
 xfce4-power-manager &
 flameshot &
 birdtray &
+qv2ray&
