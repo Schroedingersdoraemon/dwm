@@ -22,8 +22,6 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const char *fonts[]          = { "SauceCodePro Nerd Font Mono:size=13" };
 static const char dmenufont[]       = "SauceCodePro Nerd Font Mono:size=13";
-//static const char *fonts[]          = { "monospace:size=12"};
-//static const char dmenufont[]       = "monospace:size=12";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -63,7 +61,8 @@ static const Rule rules[] = {
 	{ "qv2ray",  NULL,     NULL,           1 << 4,    1,             0,          0,          -1,        -1 },
 	{ "Thunderbird",NULL,  NULL,           1 << 4,    1,             0,          0,          -1,        -1 },
 	{ "qq.exe",  NULL,     NULL,           1 << 8,    1,             0,          0,          -1,        -1 },
-	{ "wechat.exe",  NULL,     NULL,           1 << 8,    1,             0,          0,          -1,        -1 },
+	{ "wechat.exe",  NULL, NULL,           1 << 8,    1,             0,          0,          -1,        -1 },
+	{ "SimpleScreenRecorder",NULL, NULL,   1 << 5,    1,             0,          0,          -1,        -1 },
 	{ "st",      NULL,     NULL,           0,         0,             0,          1,          -1,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,             1,          0,           1,        -1 }, /* xev */
 };
@@ -96,7 +95,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", "#37474F", "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *roficmd[]  = { "rofi", "-show", "run", NULL };
 //static const char *roficmd[]  = { "rofi", "-show", "run", "-config", "~/prog/rofi-spotlight/rofi.rasi", NULL };
@@ -121,6 +120,9 @@ static const char *cmusprev[] = { "/home/dylan/prog/dwm/functions/cmus_prev.sh",
 //add your own lockscreen script here
 static const char *lockscreencmd[] = { "/home/dylan/scripts/lockscreen.sh" };
 
+// select an emoji
+static const char *emojicmd[] = { "/home/dylan/scripts/emoji.sh" };
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ Mod1Mask,                     XK_d,      spawn,          {.v = dmenucmd } },
@@ -143,6 +145,7 @@ static Key keys[] = {
 
 	{ 0,                            XK_Print,  spawn,          {.v = scrshotcmd} },
 	{ MODKEY,                       XK_Print,  spawn,          {.v = scrshotselectcmd} },
+    { MODKEY,                       XK_e,                    spawn,          {.v = emojicmd} },
 
 	{ 0,                            XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
 	{ 0,                            XF86XK_AudioMute,        spawn,          {.v = mutevol } },
