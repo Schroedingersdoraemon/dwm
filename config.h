@@ -63,6 +63,7 @@ static const Rule rules[] = {
 	{ "qq.exe",  NULL,     NULL,           1 << 8,    1,             0,          0,          -1,        -1 },
 	{ "wechat.exe",  NULL, NULL,           1 << 8,    1,             0,          0,          -1,        -1 },
 	{ "SimpleScreenRecorder",NULL, NULL,   1 << 5,    1,             0,          0,          -1,        -1 },
+	{ "百度网盘",NULL,     NULL,           1 << 7,    1,             0,          0,          -1,        -1 },
 	{ "st",      NULL,     NULL,           0,         0,             0,          1,          -1,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,             1,          0,           1,        -1 }, /* xev */
 };
