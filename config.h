@@ -124,9 +124,13 @@ static const char *lockscreencmd[] = { "/home/dylan/scripts/lockscreen.sh" };
 // select an emoji
 static const char *emojicmd[] = { "/home/dylan/scripts/emoji.sh" };
 
+// desktop support for dmenu
+static const char *dmenudesktopcmd[] = { "/home/dylan/scripts/desktop.sh" };
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ Mod1Mask,                     XK_d,      spawn,          {.v = dmenucmd } },
+    { Mod1Mask,                     XK_s,      spawn,          {.v = dmenudesktopcmd} },
 	{ Mod1Mask,                     XK_r,      spawn,          {.v = roficmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 
@@ -146,7 +150,9 @@ static Key keys[] = {
 
 	{ 0,                            XK_Print,  spawn,          {.v = scrshotcmd} },
 	{ MODKEY,                       XK_Print,  spawn,          {.v = scrshotselectcmd} },
+
     { MODKEY,                       XK_e,                    spawn,          {.v = emojicmd} },
+
 
 	{ 0,                            XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
 	{ 0,                            XF86XK_AudioMute,        spawn,          {.v = mutevol } },
