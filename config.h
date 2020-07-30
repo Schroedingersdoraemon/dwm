@@ -58,7 +58,6 @@ static const Rule rules[] = {
 	{ "Gimp",    NULL,     NULL,           0,         0,             1,          0,           0,        -1 },
 	{ "firefox", NULL,     NULL,           1 << 1,    1,             0,          0,          -1,        -1 },
 	{ "Brave",   NULL,     NULL,           1 << 1,    1,             0,          0,          -1,        -1 },
-	{ "Spotify", NULL,     NULL,           1 << 3,    1,             0,          0,          -1,        -1 },
 	{ "qv2ray",  NULL,     NULL,           1 << 4,    1,             0,          0,          -1,        -1 },
 	{ "Thunderbird",NULL,  NULL,           1 << 4,    1,             0,          0,          -1,        -1 },
 	{ "SimpleScreenRecorder",NULL, NULL,   1 << 5,    1,             0,          0,          -1,        -1 },
@@ -103,22 +102,8 @@ static const char *termcmd[]  = { "st", NULL };
 
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x25", NULL };
-//
-static const char *scrshotcmd[] = {"flameshot", "full", "-p", "/home/dylan/screenshots", NULL};
-static const char *scrshotselectcmd[] = {"flameshot", "gui", NULL};
-
-static const char *upvol[]   = { "/home/dylan/scripts/dwm_functions/vol_up.sh",  NULL };
-static const char *downvol[] = { "/home/dylan/scripts/dwm_functions/vol_down.sh",  NULL };
-static const char *mutevol[] = { "/home/dylan/scripts/dwm_functions/vol_toggle.sh",  NULL };
 
 static const char *cmuscmd[] = { "st", "cmus" };
-
-static const char *cmustoggle[] = { "/home/dylan/scripts/dwm_functions/cmus_toggle.sh", NULL };
-static const char *cmusnext[] = { "/home/dylan/scripts/dwm_functions/cmus_next.sh", NULL };
-static const char *cmusprev[] = { "/home/dylan/scripts/dwm_functions/cmus_prev.sh", NULL };
-
-//add your own lockscreen script here
-static const char *lockscreencmd[] = { "/home/dylan/scripts/dwm_functions/lockscreen.sh" };
 
 // select an emoji
 static const char *emojicmd[] = { "/home/dylan/scripts/dwm_functions/emoji.sh" };
@@ -146,18 +131,19 @@ static Key keys[] = {
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 
-	{ 0,                            XK_Print,  spawn,          {.v = scrshotcmd} },
-	{ MODKEY,                       XK_Print,  spawn,          {.v = scrshotselectcmd} },
+	{ 0,                            XK_Print,  spawn,          SHCMD("flameshot full -p ~/screenshots")},
+	{ MODKEY,                       XK_Print,  spawn,          SHCMD("flameshot gui")},
 
-	{ 0,                            XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
-	{ 0,                            XF86XK_AudioMute,        spawn,          {.v = mutevol } },
-	{ 0,                            XF86XK_AudioRaiseVolume, spawn,          {.v = upvol   } },
+	{ 0,        XF86XK_AudioLowerVolume,    spawn,      SHCMD("/usr/bin/amixer -qM set Master 5%- umute")},
+	{ 0,        XF86XK_AudioMute,           spawn,      SHCMD("/usr/bin/amixer set Master toggle")},
+	{ 0,        XF86XK_AudioRaiseVolume,    spawn,      SHCMD("/usr/bin/amixer -qM set Master 5%+ umute")},
 
-	{ 0,                            XF86XK_AudioPlay,        spawn,          {.v = cmustoggle} },
-	{ 0,                            XF86XK_AudioPrev,        spawn,          {.v = cmusprev} },
-	{ 0,                            XF86XK_AudioNext,        spawn,          {.v = cmusnext} },
+	{ 0,                            XF86XK_AudioPlay,        spawn,         SHCMD("cmus-remote --pause")},
+	{ 0,                            XF86XK_AudioPrev,        spawn,         SHCMD("cmus-remote --prev")},
+	{ 0,                            XF86XK_AudioNext,        spawn,         SHCMD("cmus-remote --next")},
 
-    { MODKEY|ControlMask,           XK_l,      spawn,         {.v = lockscreencmd}},
+    { MODKEY|ControlMask,           XK_l,      spawn,         SHCMD("slock")},
+    { MODKEY,                       XK_w,      spawn,         SHCMD("mpv --no-cache --no-osc --no-input-default-bindings --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)")},
 
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
