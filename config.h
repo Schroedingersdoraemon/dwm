@@ -58,12 +58,14 @@ static const Rule rules[] = {
 	{ "Gimp",    NULL,     NULL,           0,         0,             1,          0,           0,        -1 },
 	{ "firefox", NULL,     NULL,           1 << 1,    1,             0,          0,          -1,        -1 },
 	{ "Brave",   NULL,     NULL,           1 << 1,    1,             0,          0,          -1,        -1 },
+	{ "Spotify", NULL,     NULL,           1 << 3,    1,             0,          0,          -1,        -1 },
 	{ "qv2ray",  NULL,     NULL,           1 << 4,    1,             0,          0,          -1,        -1 },
 	{ "Thunderbird",NULL,  NULL,           1 << 4,    1,             0,          0,          -1,        -1 },
-	{ "qq.exe",  NULL,     NULL,           1 << 8,    1,             0,          0,          -1,        -1 },
-	{ "wechat.exe",  NULL, NULL,           1 << 8,    1,             0,          0,          -1,        -1 },
 	{ "SimpleScreenRecorder",NULL, NULL,   1 << 5,    1,             0,          0,          -1,        -1 },
-	{ "百度网盘",NULL,     NULL,           1 << 7,    1,             0,          0,          -1,        -1 },
+	{ "baidunetdisk",NULL, NULL,           1 << 7,    1,             0,          0,          -1,        -1 },
+	{ "qq.exe",  NULL,     NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
+	{ "wechat.exe",  NULL, NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
+	{ "TelegramDesktop",NULL,NULL,         1 << 8,    1,             1,          0,          -1,        -1 },
 	{ "st",      NULL,     NULL,           0,         0,             0,          1,          -1,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,             1,          0,           1,        -1 }, /* xev */
 };
@@ -130,7 +132,7 @@ static const char *dmenudesktopcmd[] = { "/home/dylan/scripts/desktop.sh" };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ Mod1Mask,                     XK_d,      spawn,          {.v = dmenucmd } },
-    { Mod1Mask,                     XK_s,      spawn,          {.v = dmenudesktopcmd} },
+    { Mod1Mask,                     XK_a,      spawn,          {.v = dmenudesktopcmd} },
 	{ Mod1Mask,                     XK_r,      spawn,          {.v = roficmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 
