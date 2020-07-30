@@ -107,24 +107,24 @@ static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x25"
 static const char *scrshotcmd[] = {"flameshot", "full", "-p", "/home/dylan/screenshots", NULL};
 static const char *scrshotselectcmd[] = {"flameshot", "gui", NULL};
 
-static const char *upvol[]   = { "/home/dylan/prog/dwm/functions/vol_up.sh",  NULL };
-static const char *downvol[] = { "/home/dylan/prog/dwm/functions/vol_down.sh",  NULL };
-static const char *mutevol[] = { "/home/dylan/prog/dwm/functions/vol_toggle.sh",  NULL };
+static const char *upvol[]   = { "/home/dylan/scripts/dwm_functions/vol_up.sh",  NULL };
+static const char *downvol[] = { "/home/dylan/scripts/dwm_functions/vol_down.sh",  NULL };
+static const char *mutevol[] = { "/home/dylan/scripts/dwm_functions/vol_toggle.sh",  NULL };
 
 static const char *cmuscmd[] = { "st", "cmus" };
 
-static const char *cmustoggle[] = { "/home/dylan/prog/dwm/functions/cmus_toggle.sh", NULL };
-static const char *cmusnext[] = { "/home/dylan/prog/dwm/functions/cmus_next.sh", NULL };
-static const char *cmusprev[] = { "/home/dylan/prog/dwm/functions/cmus_prev.sh", NULL };
+static const char *cmustoggle[] = { "/home/dylan/scripts/dwm_functions/cmus_toggle.sh", NULL };
+static const char *cmusnext[] = { "/home/dylan/scripts/dwm_functions/cmus_next.sh", NULL };
+static const char *cmusprev[] = { "/home/dylan/scripts/dwm_functions/cmus_prev.sh", NULL };
 
 //add your own lockscreen script here
-static const char *lockscreencmd[] = { "/home/dylan/scripts/lockscreen.sh" };
+static const char *lockscreencmd[] = { "/home/dylan/scripts/dwm_functions/lockscreen.sh" };
 
 // select an emoji
-static const char *emojicmd[] = { "/home/dylan/scripts/emoji.sh" };
+static const char *emojicmd[] = { "/home/dylan/scripts/dwm_functions/emoji.sh" };
 
 // desktop support for dmenu
-static const char *dmenudesktopcmd[] = { "/home/dylan/scripts/desktop.sh" };
+static const char *dmenudesktopcmd[] = { "/home/dylan/scripts/dwm_functions/desktop.sh" };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
