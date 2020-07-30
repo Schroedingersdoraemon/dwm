@@ -100,9 +100,6 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", "#37474F", "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *roficmd[]  = { "rofi", "-show", "run", NULL };
-//static const char *roficmd[]  = { "rofi", "-show", "run", "-config", "~/prog/rofi-spotlight/rofi.rasi", NULL };
-
 
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x25", NULL };
@@ -133,7 +130,8 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ Mod1Mask,                     XK_d,      spawn,          {.v = dmenucmd } },
     { Mod1Mask,                     XK_a,      spawn,          {.v = dmenudesktopcmd} },
-	{ Mod1Mask,                     XK_r,      spawn,          {.v = roficmd } },
+    { Mod1Mask,                     XK_e,      spawn,          {.v = emojicmd} },
+
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = cmuscmd} },
@@ -143,18 +141,13 @@ static Key keys[] = {
 
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
-
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 
 	{ 0,                            XK_Print,  spawn,          {.v = scrshotcmd} },
 	{ MODKEY,                       XK_Print,  spawn,          {.v = scrshotselectcmd} },
-
-    { MODKEY,                       XK_e,                    spawn,          {.v = emojicmd} },
-
 
 	{ 0,                            XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
 	{ 0,                            XF86XK_AudioMute,        spawn,          {.v = mutevol } },
