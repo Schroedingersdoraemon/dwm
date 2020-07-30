@@ -54,6 +54,9 @@ Patches added:
     ```
 - awesomebar
     - changes the taskbar to be more like awesome
+- aspectresize
+    - resize the window with its aspect retio remain constant
+    - **Note** only works in supporting layout like *NULL*
 - columns
     - like tilling mode but no gaps
 - fullscreen
@@ -62,6 +65,8 @@ Patches added:
     - current client goes fullscreen
 - hide vacant tags
     - prevents dwm from drawing tags with no clients
+- moveresize
+    - to resize current client with arrow keys
 - noborder
     - forgot to write, never mind
 - pertag
