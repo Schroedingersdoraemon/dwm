@@ -107,10 +107,10 @@ static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x25"
 static const char *cmuscmd[] = { "st", "cmus" };
 
 // select an emoji
-static const char *emojicmd[] = { "/home/dylan/scripts/dwm_functions/emoji.sh" };
+static const char *emojicmd[] = { "/home/dylan/prog/dwm/functions/emoji.sh" };
 
 // desktop support for dmenu
-static const char *dmenudesktopcmd[] = { "/home/dylan/scripts/dwm_functions/desktop.sh" };
+static const char *dmenudesktopcmd[] = { "/home/dylan/prog/dwm/functions/desktop.sh" };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
