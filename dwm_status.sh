@@ -44,18 +44,18 @@ show_record(){
 }
 
 
-#LOC=$(readlink -f "$0")
-#DIR=$(dirname "$LOC")
-DIR="/home/dylan/scripts/dwm_functions"
+LOC=$(readlink -f "$0")
+DIR=$(dirname "$LOC")
+#DIR="/home/dylan/scripts/dwm_functions"
 export IDENTIFIER="unicode"
 
-. "$DIR/dwm_cmus.sh"
-. "$DIR/dwm_resources.sh"
-. "$DIR/dwm_battery.sh"
-. "$DIR/dwm_alsa.sh"
-. "$DIR/dwm_weather.sh"
-. "$DIR/dwm_ccurse.sh"
-. "$DIR/dwm_date.sh"
+. "$DIR/functions/dwm_cmus.sh"
+. "$DIR/functions/dwm_resources.sh"
+. "$DIR/functions/dwm_battery.sh"
+. "$DIR/functions/dwm_alsa.sh"
+. "$DIR/functions/dwm_weather.sh"
+. "$DIR/functions/dwm_ccurse.sh"
+. "$DIR/functions/dwm_date.sh"
 
 # for temporary status show
 # Considering fetching weather date per second causes the slowness of seconds, I modified the source code:
