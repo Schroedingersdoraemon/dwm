@@ -9,3 +9,5 @@ xfce4-power-manager &
 flameshot &
 birdtray &
 qv2ray&
+sleep 2
+plank &
