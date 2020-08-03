@@ -2015,7 +2015,7 @@ run(void)
 
 void
 runAutostart(void) {
-	system("cd ~/prog/dwm/functions; ./autostart.sh &");
+	system("~/prog/dwm/functions/autostart.sh &");
 }
 
 void
