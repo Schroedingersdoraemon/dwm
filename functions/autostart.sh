@@ -9,4 +9,4 @@ flameshot &
 #birdtray &
 #qv2ray &
 #sleep 2
-#plank &
+plank &
