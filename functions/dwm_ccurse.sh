@@ -9,14 +9,14 @@
 dwm_ccurse () {
     APTSFILE="$HOME/.calcurse/todo"
 
-    #if $(head -n 1 "$APTSFILE"|grep --quiet 1 "$APTSFILE");
-    #then
+    if $(head -n 1 "$APTSFILE"|grep --quiet 1 "$APTSFILE");
+    then
         #APPOINTMENT=$(head -n 1 "$APTSFILE" | sed -r 's/\[1\] //')
         APPOINTMENT=$(head -n 1 "$APTSFILE" | awk '{print $2}')
         printf "[💡 %s] " "$APPOINTMENT"
-    #else
-        #return 0
-    #fi
+    else
+        return 0
+    fi
 
     #if [ "$APPOINTMENT" != "" ]; then
     #    printf "%s" "$SEP1"
