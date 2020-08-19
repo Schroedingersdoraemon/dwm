@@ -11,3 +11,5 @@ flameshot &
 #sleep 2
 plank &
 volumeicon &
+
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
