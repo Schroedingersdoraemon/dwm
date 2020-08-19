@@ -1,4 +1,4 @@
-choices="QQ\nWeChat\nBaiduNetdisk"
+choices="QQ\nWeChat\nBaiduNetdisk\nPamac Manager"
 
 chosen=$(echo -e $choices | dmenu -p "Enter the application：")
 
@@ -9,4 +9,6 @@ case $chosen in
         env LANG=zh_CN.UTF-8 wine "/home/dylan/.wine/drive_c/Tencent/WeChat/WeChat.exe" ;;
     BaiduNetdisk)
         /usr/lib/baidunetdisk/baidunetdisk --no-sandbox %U ;;
+    Pamac\ Manager)
+        env LANG=zh_CN.UTF-8 pamac-manager;;
 esac
