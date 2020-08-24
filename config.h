@@ -64,7 +64,7 @@ static const Rule rules[] = {
 	{ "qv2ray",  NULL,     NULL,           1 << 4,    1,             0,          0,          -1,        -1 },
 	{ "Thunderbird",NULL,  NULL,           1 << 4,    1,             0,          0,          -1,        -1 },
 	{ "SimpleScreenRecorder",NULL, NULL,   1 << 5,    1,             0,          0,          -1,        -1 },
-	{ "transmission-qt",NULL, NULL,        1 << 5,    1,             0,          0,          -1,        -1 },
+	{ "transmission",NULL, NULL,        1 << 5,    1,             0,          0,          -1,        -1 },
 	{ "baidunetdisk",NULL, NULL,           1 << 7,    1,             0,          0,          -1,        -1 },
 	{ "qq.exe",  NULL,     NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
 	{ "wechat.exe",  NULL, NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
