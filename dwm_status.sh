@@ -54,7 +54,7 @@ export IDENTIFIER="unicode"
 . "$DIR/functions/dwm_battery.sh"
 . "$DIR/functions/dwm_alsa.sh"
 . "$DIR/functions/dwm_weather.sh"
-. "$DIR/functions/dwm_ccurse.sh"
+# . "$DIR/functions/dwm_ccurse.sh"
 . "$DIR/functions/dwm_date.sh"
 
 # for temporary status show
@@ -91,8 +91,7 @@ do
     vel_recv=$(get_velocity $received_bytes $old_received_bytes $now)
     vel_trans=$(get_velocity $transmitted_bytes $old_transmitted_bytes $now)
 
-    #xsetroot -name "$(dwm_cmus) 💿 $(dwm_resources) [🌏 ⬇️$vel_recv ⬆️$vel_trans] $(dwm_alsa) [$(dwm_battery)] $(dwm_date) $(dwm_ccurse)$WEATHER"
-    xsetroot -name "$(dwm_cmus) 💿 $(dwm_resources) [🌏 ⏬$vel_recv ⏫$vel_trans] $(dwm_alsa) [$(dwm_battery)] $(dwm_date) $(dwm_ccurse)$WEATHER"
+    xsetroot -name "$(dwm_cmus) 💿 $(dwm_resources) [🌏 ⏬$vel_recv ⏫$vel_trans] $(dwm_alsa) [$(dwm_battery)] $(dwm_date) $WEATHER"
 
     sleep 1
 
