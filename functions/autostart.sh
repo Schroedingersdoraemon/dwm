@@ -6,9 +6,6 @@
 picom &
 mate-power-manager &
 flameshot &
-#birdtray &
-#qv2ray &
-#sleep 2
 plank &
 volumeicon &
 
