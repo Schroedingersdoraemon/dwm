@@ -142,9 +142,13 @@ static Key keys[] = {
 	{ 0,        XF86XK_AudioMute,           spawn,      SHCMD("/usr/bin/amixer set Master toggle")},
 	{ 0,        XF86XK_AudioRaiseVolume,    spawn,      SHCMD("/usr/bin/amixer -qM set Master 5%+ umute")},
 
-	{ 0,                            XF86XK_AudioPlay,        spawn,         SHCMD("cmus-remote --pause")},
-	{ 0,                            XF86XK_AudioPrev,        spawn,         SHCMD("cmus-remote --prev")},
-	{ 0,                            XF86XK_AudioNext,        spawn,         SHCMD("cmus-remote --next")},
+	{ 0,        XF86XK_AudioPlay,           spawn,      SHCMD("cmus-remote --pause")},
+	{ 0,        XF86XK_AudioPrev,           spawn,      SHCMD("cmus-remote --prev")},
+	{ 0,        XF86XK_AudioNext,           spawn,      SHCMD("cmus-remote --next")},
+
+	{ 0,        XF86XK_MonBrightnessUp,     spawn,      SHCMD("xbacklight -inc 10")},
+	{ 0,        XF86XK_MonBrightnessDown,   spawn,      SHCMD("xbacklight -dec 10")},
+	//{ 0,        XF86XK_AudioNext,           spawn,      SHCMD("cmus-remote --next")},
 
     { MODKEY|ControlMask,           XK_l,      spawn,         SHCMD("slock")},
     { MODKEY,                       XK_w,      spawn,         SHCMD("mpv --no-cache --no-osc --no-input-default-bindings --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)")},
