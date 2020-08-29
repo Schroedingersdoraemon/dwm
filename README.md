@@ -59,10 +59,12 @@ Patches added:
     - **Note** only works in supporting layout like *NULL*
 - columns
     - like tilling mode but no gaps
-- fullscreen
+- fullscreen(abandoned on 2020-08-29)
     - apply the monocle layout
     - hide the bar
     - current client goes fullscreen
+- actualfullscr(applied on 2020-08-29)
+    - toggle the current client to actual fullscreen
 - hide vacant tags
     - prevents dwm from drawing tags with no clients
 - moveresize
