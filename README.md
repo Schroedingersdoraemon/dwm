@@ -103,15 +103,10 @@ Things you need to modify in configuration
     - scrshotcmd[] = {"flameshot", "full", "-p", "**PATH/TO/SCREENSHOTS**", NULL};
     - scrshotselectcmd[] = {"flameshot", "gui", NULL};
         - install flameshot
-    - upvol[]   = { "**PATH/TO/SCRIPT**",  NULL };
-    - downvol[] = { "**PATH/TO/SCRIPT**",  NULL };
-    - mutevol[] = { "**PATH/TO/SCRIPT**",  NULL };
-        - the three scripts can be found in repo: **dwm**/functions
-    - cmustoggle [] = {}
-    - cmusnext[] = {}
-    - cmusprev[] = {}
-        - delete the threem *cmus* script if you do not use cmus
-    - lockscreencmd = { "**COMMAND TO LOCK SCREEN**" }
+	{ 0,        XF86XK_AudioLowerVolume,    spawn,      SHCMD("/usr/bin/amixer -qM set Master 5%- umute")},
+	{ 0,        XF86XK_AudioMute,           spawn,      SHCMD("/usr/bin/amixer set Master toggle")},
+	{ 0,        XF86XK_AudioRaiseVolume,    spawn,      SHCMD("/usr/bin/amixer -qM set Master 5%+ umute")},
+        - install alsa-utils
     - Key keys[] = {}
         - just modify shortcuts as you like
 
