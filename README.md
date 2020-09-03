@@ -2,7 +2,7 @@ Self maintained dwm with some nice patches. For dwm status bar functions, cd fun
 
 <br>
 
-### 1. Requirements
+### 1. Prerequisites
 
 - For **Ubuntu** users, you may executate as below
 ```linux
@@ -18,7 +18,10 @@ to install these packages:
 
 <br>
 
-- For **Arch** users, please commit an issue to remind me of supplying dependencies.
+- For **Arch** users, please execute:
+```bash
+sudo pacman -S libxft libxinerama
+```
 
 <br>
 
@@ -49,7 +52,7 @@ Patches added:
     ```shell
     void
     runAutostart(void) {
-        system("cd path/to/your/script; ./autostart.sh &");
+        system("cd path/to/your/script; ./script.sh &");
     }
     ```
 - awesomebar
