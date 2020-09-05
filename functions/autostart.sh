@@ -4,9 +4,8 @@
 ~/prog/dwm/dwm_status.sh &
 
 picom &
-mate-power-manager &
 flameshot &
-plank &
+#plank &
 volumeicon &
 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
