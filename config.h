@@ -61,6 +61,7 @@ static const Rule rules[] = {
 	{ "Brave",   NULL,     NULL,           1 << 1,    1,             0,          0,          -1,        -1 },
 	{ "Surf",    NULL,     NULL,           0,         0,             0,          0,           1,        -1 },
 	{ "netease-cloud-music",NULL,NULL,     1 << 3,    1,             0,          0,          -1,        -1 },
+	{ "cmus", NULL, NULL,     1 << 3,    1,             0,          0,          -1,        -1 },
 	{ "qv2ray",  NULL,     NULL,           1 << 4,    1,             0,          0,          -1,        -1 },
 	{ "Thunderbird",NULL,  NULL,           1 << 4,    1,             0,          0,          -1,        -1 },
 	{ "SimpleScreenRecorder",NULL, NULL,   1 << 5,    1,             0,          0,          -1,        -1 },
@@ -107,7 +108,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x25", NULL };
 
-static const char *cmuscmd[] = { "st", "cmus" };
+static const char *cmuscmd[] = { "st", "-c", "cmus", "cmus" };
 
 // select an emoji
 static const char *emojicmd[] = { "/home/dylan/prog/dwm/functions/emoji.sh" };
