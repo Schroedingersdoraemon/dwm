@@ -1,4 +1,4 @@
-choices="QQ\nWeChat\nBaiduNetdisk\nPamac Manager"
+choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nPamac Manager"
 
 chosen=$(echo -e $choices | dmenu -p "Enter the application：")
 
@@ -11,4 +11,6 @@ case $chosen in
         /usr/lib/baidunetdisk/baidunetdisk --no-sandbox %U ;;
     Pamac\ Manager)
         env LANG=zh_CN.UTF-8 pamac-manager;;
+    Anaconda\ Navigator)
+        /opt/anaconda/bin/anaconda-navigator ;;
 esac
