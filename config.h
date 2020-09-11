@@ -156,7 +156,7 @@ static Key keys[] = {
     { MODKEY,                       XK_w,      spawn,         SHCMD("mpv --no-cache --no-osc --no-input-default-bindings --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)")},
 
     { 0,   XK_Insert,  spawn,  SHCMD("notify-send \"📋 Clipboard contents:\"\"$(xclip -o -selection clipboard)\"")},
-    { MODKEY,     XK_Insert,  spawn,  SHCMD("notify-send \"📋 Primary contents:\"\"$(xclip -o -selection primary)\"")},
+    { ShiftMask,    XK_Insert,  spawn,  SHCMD("notify-send \"📋 Primary contents:\"\"$(xclip -o -selection primary)\"")},
 
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
