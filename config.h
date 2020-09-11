@@ -139,13 +139,13 @@ static Key keys[] = {
 	{ 0,                            XK_Print,  spawn,          SHCMD("flameshot full -p ~/screenshots")},
 	{ MODKEY,                       XK_Print,  spawn,          SHCMD("flameshot gui")},
 
-	{ 0,        XF86XK_AudioLowerVolume,    spawn,      SHCMD("/usr/bin/amixer -qM set Master 5%- umute")},
-	{ 0,        XF86XK_AudioMute,           spawn,      SHCMD("/usr/bin/amixer set Master toggle")},
-	{ 0,        XF86XK_AudioRaiseVolume,    spawn,      SHCMD("/usr/bin/amixer -qM set Master 5%+ umute")},
+	{ 0,        XF86XK_AudioLowerVolume,    spawn,      SHCMD("/usr/bin/amixer -qM set Master 5%- umute; kill -36 $(pidof dwmblocks)")},
+	{ 0,        XF86XK_AudioMute,           spawn,      SHCMD("/usr/bin/amixer set Master toggle; kill -36 $(pidof dwmblocks)")},
+	{ 0,        XF86XK_AudioRaiseVolume,    spawn,      SHCMD("/usr/bin/amixer -qM set Master 5%+ umute; kill -36 $(pidof dwmblocks)")},
 
-	{ 0,        XF86XK_AudioPlay,           spawn,      SHCMD("cmus-remote --pause")},
-	{ 0,        XF86XK_AudioPrev,           spawn,      SHCMD("cmus-remote --prev")},
-	{ 0,        XF86XK_AudioNext,           spawn,      SHCMD("cmus-remote --next")},
+	{ 0,        XF86XK_AudioPlay,           spawn,      SHCMD("cmus-remote --pause; kill -35 $(pidof dwmblocks)")},
+	{ 0,        XF86XK_AudioPrev,           spawn,      SHCMD("cmus-remote --prev; kill -35 $(pidof dwmblocks)")},
+	{ 0,        XF86XK_AudioNext,           spawn,      SHCMD("cmus-remote --next; kill -35 $(pidof dwmblocks)")},
 
 	{ 0,        XF86XK_MonBrightnessUp,     spawn,      SHCMD("xbacklight -inc 10")},
 	{ 0,        XF86XK_MonBrightnessDown,   spawn,      SHCMD("xbacklight -dec 10")},
