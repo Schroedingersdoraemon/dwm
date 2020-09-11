@@ -108,8 +108,6 @@ static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x25", NULL };
 
-static const char *cmuscmd[] = { "st", "-c", "cmus", "cmus" };
-
 // select an emoji
 static const char *emojicmd[] = { "/home/dylan/prog/dwm/functions/emoji.sh" };
 
@@ -124,7 +122,7 @@ static Key keys[] = {
 
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 
-	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = cmuscmd} },
+	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("st -c cmus cmus; kill -35 $(pidof dwmblocks)") },
 
 	{ MODKEY,                       XK_BackSpace,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
@@ -149,7 +147,6 @@ static Key keys[] = {
 
 	{ 0,        XF86XK_MonBrightnessUp,     spawn,      SHCMD("xbacklight -inc 10")},
 	{ 0,        XF86XK_MonBrightnessDown,   spawn,      SHCMD("xbacklight -dec 10")},
-	//{ 0,        XF86XK_AudioNext,           spawn,      SHCMD("cmus-remote --next")},
 
     { MODKEY|ControlMask,           XK_l,      spawn,         SHCMD("slock")},
     { MODKEY,                       XK_w,      spawn,         SHCMD("mpv --no-cache --no-osc --no-input-default-bindings --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)")},
