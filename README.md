@@ -22,20 +22,21 @@ to install these packages:
 ```bash
 sudo pacman -S libxft libxinerama
 ```
+
+    1. libxft           FreeType-based font drawing library for X
+    2. libxinerama      X11 Xinerama extension library
 Optional:
 ```bash
 sudo pacman -S xclip nerd-fonts-source-code-pro ttf-joypixels alsa-utils polkit-gnome flameshot network-manager-applet
 ```
-```
-xclip:                          emoji selecting script
-nerd-fonts-source-code-pro:     dwm font
-ttf-joypixels:                  emoji support
-alsa-utils:                     media key binding
-polkit-gome:                    legacy polkit authentication agent
-picom:                          X compositor
-flameshot:                      screenshot
-network-manager-applet:         applet for nm
-```
+    1. xclip                          for emoji selecting script
+    2. nerd-fonts-source-code-pro     dwm font
+    3. ttf-joypixels                  emoji support
+    4. alsa-utils                     media key binding
+    5. polkit-gome                    legacy polkit authentication agent
+    6. picom                          X compositor
+    7. flameshot                      screenshot
+    8. network-manager-applet         applet for nm
 
 <br>
 
@@ -55,8 +56,7 @@ Afterwards enter the following command to build and install dwm
 
 Things you **must** modify in configuration
 
-- config.h
-    -
+- #### config.h
     -       *termcmd[]  = { "st", NULL };
             // your preferred terminal emulator, default is st.
             For my personal st, please visit https://github.com/Schroedingersdoraemon/st
@@ -67,8 +67,10 @@ Things you **must** modify in configuration
     -       *dmenudesktopcmd[] = { "/home/dylan/prog/dwm/functions/desktop.sh" };
             // change the path of the desktoprun script
 
-- dwm.c
+- #### dwm.c
     -       void runAutostart(void) {
 	            system("~/prog/dwm/functions/autostart.sh &");
             }
             //the path of your autostart script
+
+- #### for emoji support, please install [libxft-bgra](https://github.com/uditkarode/libxft-bgra), which is already in [AUR](https://aur.archlinux.org)
