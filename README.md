@@ -22,6 +22,20 @@ to install these packages:
 ```bash
 sudo pacman -S libxft libxinerama
 ```
+Optional:
+```bash
+sudo pacman -S xclip nerd-fonts-source-code-pro ttf-joypixels alsa-utils polkit-gnome flameshot network-manager-applet
+```
+```
+xclip:                          emoji selecting script
+nerd-fonts-source-code-pro:     dwm font
+ttf-joypixels:                  emoji support
+alsa-utils:                     media key binding
+polkit-gome:                    legacy polkit authentication agent
+picom:                          X compositor
+flameshot:                      screenshot
+network-manager-applet:         applet for nm
+```
 
 <br>
 
@@ -36,90 +50,25 @@ Afterwards enter the following command to build and install dwm
 
 <br>
 
-### 3. Customization
 
-**Bold fonts** indicate the need of modification
+### 3. Replenishment
 
-Patches added:
+Things you **must** modify in configuration
 
-- alpha
-    - allow dwm to have translucent effect
-    u
-- **autostart**
-    - open your dwm.c
-    - find autostart function
-    - to run a script at startup as below:
-    ```shell
-    void
-    runAutostart(void) {
-        system("cd path/to/your/script; ./script.sh &");
-    }
-    ```
-- awesomebar
-    - changes the taskbar to be more like awesome
-- aspectresize
-    - resize the window with its aspect retio remain constant
-    - **Note** only works in supporting layout like *NULL*
-- columns
-    - like tilling mode but no gaps
-- fullscreen(abandoned on 2020-08-29)
-    - apply the monocle layout
-    - hide the bar
-    - current client goes fullscreen
-- actualfullscr(applied on 2020-08-29)
-    - toggle the current client to actual fullscreen
-- hide vacant tags
-    - prevents dwm from drawing tags with no clients
-- moveresize
-    - to resize current client with arrow keys
-- noborder
-    - forgot to write, never mind
-- pertag
-    - keeps layout, mwfact, barpos and nmaster per tag
-- view on tag
-    - before patch:
-        - move a client to tag 2
-        - return back to tag1
-    - after:
-        - move a client to tag 2
-        - stay there
-- rotatestack
-    - stack rotation moves a client from the bottom to the top of the stack
-- scratchpad
-    - spawn or restore a floating terminal window, useful to do some temprory typing
-- systray
-    - system tray implementation
-
-- switch to tag
-    - switch to a certain tag when a certain program is opened
-
-### 4. Replenishment
-Things you need to modify in configuration
 - config.h
-    - fonts[] = { "**FONT TO USE**:size=**SIZE**" }
-    - dmenufont [] = { "**FONT TO USE**:size=**SIZE**" }
-        - delete if you don't use dmenu
-    - dmenucmd[] = { "dmenu_run", NULL };
-    - termcmd[]  = { "**YOUR TERMINAL EMULATOR**", NULL };
-    - roficmd[]  = { "rofi", "-show", "run", NULL };
-        - delete if you don't use rofi
-    - scrshotcmd[] = {"flameshot", "full", "-p", "**PATH/TO/SCREENSHOTS**", NULL};
-    - scrshotselectcmd[] = {"flameshot", "gui", NULL};
-        - install flameshot
-	{ 0,        XF86XK_AudioLowerVolume,    spawn,      SHCMD("/usr/bin/amixer -qM set Master 5%- umute")},
-	{ 0,        XF86XK_AudioMute,           spawn,      SHCMD("/usr/bin/amixer set Master toggle")},
-	{ 0,        XF86XK_AudioRaiseVolume,    spawn,      SHCMD("/usr/bin/amixer -qM set Master 5%+ umute")},
-        - install alsa-utils
-    - Key keys[] = {}
-        - just modify shortcuts as you like
+    -
+    -       *termcmd[]  = { "st", NULL };
+            // your preferred terminal emulator, default is st.
+            For my personal st, please visit https://github.com/Schroedingersdoraemon/st
+    -       *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x25", NULL };
+            // scratchpad terminal
+    -       *emojicmd[] = { "/home/dylan/prog/dwm/functions/emoji.sh" };
+            // change the path of the emoji script
+    -       *dmenudesktopcmd[] = { "/home/dylan/prog/dwm/functions/desktop.sh" };
+            // change the path of the desktoprun script
 
 - dwm.c
-    - autostart
-    ```c
-    void
-    runAutostart(void) {
-        system("cd PATH/TO/DWM/FUNCTIONS; ./autostart.sh &");
-        //pertinent function can be found in my github
-        //Schroedingersdoraemon/dwm/functions
-    }
-    ```
+    -       void runAutostart(void) {
+	            system("~/prog/dwm/functions/autostart.sh &");
+            }
+            //the path of your autostart script
