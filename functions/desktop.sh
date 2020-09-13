@@ -1,7 +1,9 @@
+#!/bin/sh
 choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nPamac Manager"
 
 chosen=$(echo -e $choices | dmenu -p "Enter the application：")
 
+#For special characters, use '\' to transform
 case $chosen in
     QQ)
         env LANG=zh_CN.UTF-8 wine "/home/dylan/.wine/drive_c/Program Files (x86)/Tencent/QQ/Bin/QQ.exe" ;;
