@@ -57,6 +57,7 @@ static const Rule rules[] = {
 	/* class     instance  title           tags mask  switch2tag  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",    NULL,     NULL,           0,         0,             1,          0,           0,        -1 },
 	{ "Pcmanfm",    NULL,   NULL,   0,  0,  1,  0,  0,  -1 },
+	{ "Nm-connection-editor",    NULL,   NULL,   0,  0,  1,  0,  0,  -1 },
 	{ "Plank",   NULL,     NULL,           1 << 0,    1,             0,          0,          -1,        -1 },
 	{ "firefox", NULL,     NULL,           1 << 1,    1,             0,          0,          -1,        -1 },
 	{ "Brave",   NULL,     NULL,           1 << 1,    1,             0,          0,          -1,        -1 },
@@ -67,7 +68,7 @@ static const Rule rules[] = {
 	{ "Thunderbird",NULL,  NULL,           1 << 4,    1,             0,          0,          -1,        -1 },
 	{ "SimpleScreenRecorder",NULL, NULL,   1 << 5,    1,             1,          0,          -1,        -1 },
 	{ "transmission",NULL, NULL,        1 << 5,    1,               0,          0,          -1,        -1 },
-	{ "baidunetdisk",NULL, NULL,           1 << 7,    1,             0,          0,          -1,        -1 },
+	{ "baidunetdisk",NULL, NULL,           1 << 7,    1,             1,          0,          -1,        -1 },
 	{ "qq.exe",  NULL,     NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
 	{ "wechat.exe",  NULL, NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
 	{ "TelegramDesktop",NULL,NULL,         1 << 8,    1,             1,          0,          -1,        -1 },
