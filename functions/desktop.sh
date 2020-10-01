@@ -1,5 +1,5 @@
 #!/bin/sh
-choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nGentoo\nShutdownGentoo"
+choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nGentoo\nShutdownGentoo\nDDraceNetwork"
 
 chosen=$(echo -e $choices | dmenu -p "Enter the application：")
 
@@ -19,4 +19,6 @@ case $chosen in
         vboxmanage startvm gentoo ;;
     ShutdownGentoo)
         kill $(pidof VirtualBoxVM) ;;
+    DDraceNetwork)
+        steam steam://rungameid/412220 ;;
 esac
