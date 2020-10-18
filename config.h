@@ -56,6 +56,7 @@ static const Rule rules[] = {
 	 */
 	/* class     instance  title           tags mask  switch2tag  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",    NULL,     NULL,           0,         0,             1,          0,           0,        -1 },
+	{ "Zathura", 	NULL, NULL, 0, 0, 0, 0, 1, -1},
 	{ "Pcmanfm",    NULL,   NULL,   0,  0,  1,  0,  0,  -1 },
 	{ "Nm-connection-editor",    NULL,   NULL,   0,  0,  1,  0,  0,  -1 },
 	{ "Plank",   NULL,     NULL,           1 << 0,    1,             0,          0,          -1,        -1 },
