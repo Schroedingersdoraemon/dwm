@@ -1,5 +1,5 @@
 #!/bin/sh
-choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nGentoo\nShutdownGentoo\nDDraceNetwork\nemu8086"
+choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nGentoo\nShutdownGentoo\nDDraceNetwork\nemu8086\nBurpSuiteCommunity"
 
 chosen=$(echo -e $choices | dmenu -p "Enter the application：")
 
@@ -29,4 +29,6 @@ case $chosen in
         steam steam://rungameid/412220 ;;
     emu8086)
         wine ~/.wine/drive_c/emu8086/emu8086.exe ;;
+	BurpSuiteCommunity)
+		/opt/BurpSuiteCommunity/BurpSuiteCommunity ;;
 esac
