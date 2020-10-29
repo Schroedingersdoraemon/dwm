@@ -1,5 +1,5 @@
 #!/bin/sh
-choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nGentoo\nShutdownGentoo\nDDraceNetwork\nemu8086\nBurpSuiteCommunity"
+choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nGentoo\nShutdownGentoo\nDDraceNetwork\nemu8086\nBurpSuiteCommunity\nDavinci Resolve"
 
 chosen=$(echo -e $choices | dmenu -p "Enter the application：")
 
@@ -26,9 +26,12 @@ case $chosen in
     ShutdownGentoo)
         kill $(pidof VirtualBoxVM) ;;
     DDraceNetwork)
-        steam steam://rungameid/412220 ;;
+		~/SteamLibrary/steamapps/common/DDraceNetwork/ddnet/DDNet ;;
+        #steam steam://rungameid/412220 ;;
     emu8086)
         wine ~/.wine/drive_c/emu8086/emu8086.exe ;;
 	BurpSuiteCommunity)
 		/opt/BurpSuiteCommunity/BurpSuiteCommunity ;;
+	Davinci\ Resolve)
+		/opt/resolve/bin/resolve ;;
 esac
