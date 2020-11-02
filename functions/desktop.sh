@@ -11,10 +11,9 @@ case $chosen in
             /usr/lib/gsd-xsettings &
         elif [ $(pgrep -x gsd-xsettings | wc -l) -eq 1 ]; then
             echo ''
-            # kill $(pidof gsd-xsettings)
-            # /usr/lib/gsd-xsettings &
         fi
-        /opt/deepinwine/apps/Deepin-QQ/run.sh ;;
+        #/opt/deepinwine/apps/Deepin-QQ/run.sh ;;
+        /opt/deepinwine/apps/Deepin-TIM/run.sh ;;
     WeChat)
         env LANG=zh_CN.UTF-8 WINEDEBUG=-all,+fps wine "/home/dylan/.wine/drive_c/Program Files/Tencent/WeChat/WeChat.exe" ;;
     BaiduNetdisk)
