@@ -73,6 +73,7 @@ static const Rule rules[] = {
 	{ "baidunetdisk",NULL, NULL,           1 << 7,    1,             1,          0,          -1,        -1 },
 	{ "qq.exe",  NULL,     NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
 	{ NULL,     "qq.exe",   NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
+	{ NULL,     "tim.exe",   NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
 	{ "wechat.exe",  NULL, NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
 	{ "TelegramDesktop",NULL,NULL,         1 << 8,    1,             1,          0,          -1,        -1 },
 	{ "st",      NULL,     NULL,           0,         0,             0,          1,          -1,        -1 },
