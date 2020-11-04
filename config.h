@@ -113,7 +113,6 @@ static const char dmenufont[]       = "SauceCodePro Nerd Font Mono:size=15";
 static const char *dmenucmd[] = { "dmenu_run" };
 //static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", "#37474F", "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *roficmd[] = { "rofi -show drun" };
 
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x25", NULL };
@@ -129,7 +128,7 @@ static Key keys[] = {
 	{ Mod1Mask,                     XK_d,      spawn,          {.v = dmenucmd } },
     { Mod1Mask,                     XK_a,      spawn,          {.v = dmenudesktopcmd} },
     { Mod1Mask,                     XK_e,      spawn,          {.v = emojicmd} },
-    { Mod1Mask,                     XK_r,      spawn,          {.v = roficmd} },
+    { Mod1Mask,                     XK_r,      spawn,          SHCMD("rofi -show drun") },
 
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 
