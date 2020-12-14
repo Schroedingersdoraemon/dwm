@@ -57,6 +57,7 @@ static const Rule rules[] = {
 	 */
 	/* class     instance  title           tags mask  switch2tag  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",    NULL,     NULL,           0,         0,             1,          0,           0,        -1 },
+	{ "Powerword", 	NULL,     NULL,           0,         0,             1,          0,           0,        -1 },
 	{ "Zathura", 	NULL, NULL, 0, 0, 0, 0, 1, -1},
 	{ "Pcmanfm",    NULL,   NULL,   0,  0,  1,  0,  0,  -1 },
 	{ "Nm-connection-editor",    NULL,   NULL,   0,  0,  1,  0,  0,  -1 },
@@ -76,6 +77,7 @@ static const Rule rules[] = {
 	{ NULL,     "qq.exe",   NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
 	{ NULL,     "tim.exe",   NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
 	{ "wechat.exe",  NULL, NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
+	{ "Qq",  NULL, NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
 	{ "TelegramDesktop",NULL,NULL,         1 << 8,    1,             1,          0,          -1,        -1 },
 	{ "st",      NULL,     NULL,           0,         0,             0,          1,          -1,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,             1,          0,           1,        -1 }, /* xev */
