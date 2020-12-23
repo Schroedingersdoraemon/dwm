@@ -6,7 +6,8 @@ chosen=$(echo -e $choices | dmenu -p "Enter the application：")
 #For special characters, use '\' to transform
 case $chosen in
     QQ)
-        env LANG=zh_CN.UTF-8 WINEDEBUG=-all,+fps wine "/home/dylan/.wine/drive_c/Program Files/Tencent/QQ/Bin/QQ.exe" ;;
+		/opt/tencent-qq/qq ;;
+        #env LANG=zh_CN.UTF-8 WINEDEBUG=-all,+fps wine "/home/dylan/.wine/drive_c/Program Files/Tencent/QQ/Bin/QQ.exe" ;;
         #if [ $(pgrep -x gsd-xsettings | wc -l) -eq 0 ]; then
             #/usr/lib/gsd-xsettings &
         #elif [ $(pgrep -x gsd-xsettings | wc -l) -eq 1 ]; then
@@ -14,9 +15,9 @@ case $chosen in
         #fi
         #/opt/deepinwine/apps/Deepin-QQ/run.sh ;;
         #/opt/deepinwine/apps/Deepin-TIM/run.sh ;;
-    WeChat)
+    #WeChat)
         #env LANG=zh_CN.UTF-8 WINEDEBUG=-all,+fps wine "/home/dylan/.wine/drive_c/Program Files/Tencent/WeChat/WeChat.exe" ;;
-        env LANG=zh_CN.UTF-8 WINEDEBUG=-all,+fps wine "~/.wine/drive_c/Program Files/Tencent/WeChat/WeChat.exe" ;;
+        #env LANG=zh_CN.UTF-8 WINEDEBUG=-all,+fps wine "~/.wine/drive_c/Program Files/Tencent/WeChat/WeChat.exe" ;;
     BaiduNetdisk)
         /usr/lib/baidunetdisk/baidunetdisk --no-sandbox %U ;;
     Anaconda\ Navigator)
