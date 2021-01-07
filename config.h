@@ -73,11 +73,13 @@ static const Rule rules[] = {
 	{ "Thunderbird",NULL,  NULL,           1 << 4,    1,             0,          0,          -1,        -1 },
 	{ "SimpleScreenRecorder",NULL, NULL,   1 << 5,    1,             1,          0,          -1,        -1 },
 	{ "transmission",NULL, NULL,        1 << 5,    1,               1,          0,          -1,        -1 },
+	{ "Steam",NULL, NULL,           1 << 7,    1,             1,          0,          -1,        -1 },
 	{ "baidunetdisk",NULL, NULL,           1 << 7,    1,             1,          0,          -1,        -1 },
 	{ "qq.exe",  NULL,     NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
 	{ NULL,     "qq.exe",   NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
 	{ NULL,     "tim.exe",   NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
 	{ "wechat.exe",  NULL, NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
+	{ "electronic-wechat",  NULL, NULL,    1 << 8,    1,             1,          0,          -1,        -1 },
 	{ "Qq",  NULL, NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
 	{ "TelegramDesktop",NULL,NULL,         1 << 8,    1,             1,          0,          -1,        -1 },
 	{ "st",      NULL,     NULL,           0,         0,             0,          1,          -1,        -1 },
@@ -252,7 +254,7 @@ static Key keys[] = {
 static Button buttons[] = {
 	/* click                event mask      button          function        argument */
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
-	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
+	//{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button1,        togglewin,      {0} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
 	{ ClkStatusText,        0,              Button1,        spawn,          SHCMD("kill -35 $(pidof dwmblocks)") },

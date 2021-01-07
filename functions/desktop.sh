@@ -1,5 +1,5 @@
 #!/bin/sh
-choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nGentoo\nShutdownGentoo\nDDraceNetwork\nemu8086\nBurpSuiteCommunity\nDavinci Resolve"
+choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nGentoo\nShutdownGentoo\nDDraceNetwork\nemu8086\nBurpSuiteCommunity\nDavinci Resolve\nalbion_online"
 
 chosen=$(echo -e $choices | dmenu -p "Enter the application：")
 
@@ -26,13 +26,13 @@ case $chosen in
         vboxmanage startvm gentoo ;;
     ShutdownGentoo)
         kill $(pidof VirtualBoxVM) ;;
-    DDraceNetwork)
-		~/SteamLibrary/steamapps/common/DDraceNetwork/ddnet/DDNet ;;
-        #steam steam://rungameid/412220 ;;
     emu8086)
         WINEARCH=win32 WINEPREFIX=~/.wine32 wine ~/.wine32/drive_c/emu8086/emu8086.exe ;;
 	BurpSuiteCommunity)
 		/opt/BurpSuiteCommunity/BurpSuiteCommunity ;;
 	Davinci\ Resolve)
 		/opt/resolve/bin/resolve ;;
+	albion_online)
+		~/Games/albion_online/Albion-Online ;;
+		#~/Games/albion_online/launcher/Albion-Online ;;
 esac
