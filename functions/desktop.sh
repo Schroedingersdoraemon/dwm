@@ -1,5 +1,5 @@
 #!/bin/sh
-choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nGentoo\nShutdownGentoo\nDDraceNetwork\nemu8086\nBurpSuiteCommunity\nDavinci Resolve\nalbion_online"
+choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nDDraceNetwork\nemu8086\nBurpSuiteCommunity\nDavinci Resolve\nalbion_online\nBattle_Net\nHearthstone\nRemoveQQCache\nShutdownNow"
 
 chosen=$(echo -e $choices | dmenu -p "Enter the application：")
 
@@ -22,10 +22,6 @@ case $chosen in
         /usr/lib/baidunetdisk/baidunetdisk --no-sandbox %U ;;
     Anaconda\ Navigator)
         /opt/anaconda/bin/anaconda-navigator ;;
-    Gentoo)
-        vboxmanage startvm gentoo ;;
-    ShutdownGentoo)
-        kill $(pidof VirtualBoxVM) ;;
     emu8086)
         WINEARCH=win32 WINEPREFIX=~/.wine32 wine ~/.wine32/drive_c/emu8086/emu8086.exe ;;
 	BurpSuiteCommunity)
@@ -35,4 +31,12 @@ case $chosen in
 	albion_online)
 		~/Games/albion_online/Albion-Online ;;
 		#~/Games/albion_online/launcher/Albion-Online ;;
+	Battle_Net)
+		wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Battle.net/Battle.net.exe ;;
+	Hearthstone)
+		wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Hearthstone/Hearthstone.exe ;;
+	RemoveQQCache)
+		rm -r ~/.config/tencent-qq/ ;;
+	ShutdownNow)
+		shutdown now ;;
 esac

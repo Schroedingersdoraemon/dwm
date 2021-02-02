@@ -73,7 +73,7 @@ static const Rule rules[] = {
 	{ "Thunderbird",NULL,  NULL,           1 << 4,    1,             0,          0,          -1,        -1 },
 	{ "SimpleScreenRecorder",NULL, NULL,   1 << 5,    1,             1,          0,          -1,        -1 },
 	{ "transmission",NULL, NULL,        1 << 5,    1,               1,          0,          -1,        -1 },
-	{ "Steam",NULL, NULL,           1 << 7,    1,             1,          0,          -1,        -1 },
+	{ "Steam",NULL, NULL,           1 << 6,    1,             1,          0,          -1,        -1 },
 	{ "baidunetdisk",NULL, NULL,           1 << 7,    1,             1,          0,          -1,        -1 },
 	{ "qq.exe",  NULL,     NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
 	{ NULL,     "qq.exe",   NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
@@ -162,8 +162,8 @@ static Key keys[] = {
 	{ 0,        XF86XK_AudioPrev,           spawn,      SHCMD("cmus-remote --prev; kill -35 $(pidof dwmblocks)")},
 	{ 0,        XF86XK_AudioNext,           spawn,      SHCMD("cmus-remote --next; kill -35 $(pidof dwmblocks)")},
 
-	{ 0,        XF86XK_MonBrightnessUp,     spawn,      SHCMD("xbacklight -inc 10; notify-send 'brightness up'")},
-	{ 0,        XF86XK_MonBrightnessDown,   spawn,      SHCMD("xbacklight -dec 10; notify-send 'brightness down'")},
+	{ 0,        XF86XK_MonBrightnessUp,     spawn,      SHCMD("xbacklight -inc 10")},
+	{ 0,        XF86XK_MonBrightnessDown,   spawn,      SHCMD("xbacklight -dec 10")},
 
     { MODKEY|ControlMask,           XK_l,      spawn,         SHCMD("slock")},
     //{ MODKEY,                       XK_w,      spawn,         SHCMD("mpv --no-cache --no-osc --no-input-default-bindings --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)")},
