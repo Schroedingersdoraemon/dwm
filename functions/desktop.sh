@@ -1,5 +1,5 @@
 #!/bin/sh
-choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nDDraceNetwork\nemu8086\nBurpSuiteCommunity\nDavinci Resolve\nalbion_online\nBattle_Net\nHearthstone\nRemoveQQCache\nShutdownNow"
+choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nDDraceNetwork\nemu8086\nBurpSuiteCommunity\nDavinci Resolve\nalbion_online\nBattle_Net\nHearthstone\nRemoveQQCache\nShutdownNow\nGTA_ViceCity\nFortressEscape"
 
 chosen=$(echo -e $choices | dmenu -p "Enter the application：")
 
@@ -39,4 +39,8 @@ case $chosen in
 		rm -r ~/.config/tencent-qq/ ;;
 	ShutdownNow)
 		shutdown now ;;
+	GTA_ViceCity)
+		cd ~/SteamLibrary/steamapps/common/Grand\ Theft\ Auto\ Vice\ City && ./reVC ;;
+	FortressEscape)
+		~/Games/FortressEscape/FortressEscape.x86 ;;
 esac
