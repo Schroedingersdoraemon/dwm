@@ -163,7 +163,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 
 	{ 0,                            XK_Print,  spawn,          SHCMD("flameshot full -p ~/screenshots")},
-	{ MODKEY,                       XK_Print,  spawn,          SHCMD("flameshot gui")},
+	{ MODKEY,                       XK_Print,  spawn,          SHCMD("maim -i $(xdotool getactivewindow) ~/Pictures/screenshots/$(date +%F_%H-%M).png")},
+	{ ShiftMask,                    XK_Print,  spawn,          SHCMD("flameshot gui")},
+	//{ MODKEY,                       XK_Print,  spawn,          SHCMD("maim -s | convert - \( +clone -background black -shadow 80x3+5+5 \) +swap -background none -layers merge +repage ~/Pictures/screenshots/$(date +%F_%H-%M).png")},
 
 	{ 0,        XF86XK_AudioLowerVolume,    spawn,      SHCMD("/usr/bin/amixer -qM set Master 5%- umute; kill -36 $(pidof dwmblocks)")},
 	{ 0,        XF86XK_AudioMute,           spawn,      SHCMD("/usr/bin/amixer set Master toggle; kill -36 $(pidof dwmblocks)")},
