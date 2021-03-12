@@ -986,8 +986,8 @@ void
 drawbar(Monitor *m)
 {
 	int x, w, tw = 0, stw = 0, n = 0, scm;
-	//int boxs = drw->fonts->h / 9;
-	//int boxw = drw->fonts->h / 6 + 2;
+	int boxs = drw->fonts->h / 9;
+	int boxw = drw->fonts->h / 6 + 2;
 	unsigned int i, occ = 0, urg = 0;
 	Client *c;
 
@@ -1046,6 +1046,8 @@ drawbar(Monitor *m)
 					remainder--;
 				}
 				drw_text(drw, x, 0, tabw, bh, lrpad / 2, c->name, 0);
+				if (c->issticky)
+					drw_polygon(drw, x + boxs, c->isfloating ? boxs * 2 + boxw : boxs, stickyiconbb.x, stickyiconbb.y, boxw, STICKYICONSH, stickyicon, LENGTH(stickyicon), Nonconvex, c->tags & c->mon->tagset[c->mon->seltags]);
 				x += tabw;
 			}
 		} else {

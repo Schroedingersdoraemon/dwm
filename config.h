@@ -45,6 +45,9 @@ static const unsigned int alphas[][3]      = {
 	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
 	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
 };
+static const XPoint stickyicon[]    = { {0,0}, {4,0}, {4,4}, {2,3}, {0,4}, {0,0} }; /* represents the icon as an array of vertices like in grade school math */
+static const XPoint stickyiconbb    = {4,4};	/* defines the bottom right corner of the bounding box of the polygon (origin is always 0,0) */
+#define STICKYICONSH boxw + (boxw * 6 / 7) 	/* defines the height of the final, scaled polygon as it will be drawn. boxw is equal to the width of the shape */
 
 /* tagging */
 //static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
