@@ -2,3 +2,5 @@ dwm
 *.o
 *.rej
 *.orig
+
+.win.log
