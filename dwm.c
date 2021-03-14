@@ -1879,6 +1879,7 @@ quit(const Arg *arg)
 		running = 0;
 	} else {
 		printf("clients running!");
+		system("notify-send 'Quit failed, clients're running!'");
 	}
 }
 
