@@ -1,5 +1,5 @@
 #!/bin/sh
-choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nDDraceNetwork\nemu8086\nBurpSuiteCommunity\nDavinci Resolve\nalbion_online\nBattle_Net\nHearthstone\nRemoveQQCache\nShutdownNow\nGTA_ViceCity\nFortressEscape\nQQMusic\nMaimWindow"
+choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nDDraceNetwork\nemu8086\nBurpSuiteCommunity\nDavinci Resolve\nalbion_online\nBattle_Net\nHearthstone\nRemoveQQCache\nShutdownNow\nGTA_ViceCity\nFortressEscape\nQQMusic\nMaimWindow\nGentoo"
 
 chosen=$(echo -e $choices | dmenu -p "Enter the application：")
 
@@ -46,5 +46,7 @@ case $chosen in
 	QQMusic)
 		~/prog/QQmusic-1.0.6.AppImage ;;
 	MaimWindow)
-		maim -s | convert - \( +clone -background black -shadow 80x3+5+5 \) +swap -background none -layers merge +repage ~/Pictures/screenshots/$(date +%F_%H-%M).png
+		maim -s | convert - \( +clone -background black -shadow 80x3+5+5 \) +swap -background none -layers merge +repage ~/Pictures/screenshots/$(date +%F_%H-%M).png ;;
+	Gentoo)
+		qemu-system-x86_64 ~/qemu_kvm/gentoo_image -enable-kvm -m 2G ;;
 esac
