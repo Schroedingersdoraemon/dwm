@@ -1870,7 +1870,16 @@ quit(const Arg *arg)
 		}
 	}
 
-	running = 0;
+	//running = 0;
+	int n;
+	system("lsw | wc -l > /home/dylan/prog/dwm/.win.log");
+	FILE *winfp = fopen("/home/dylan/prog/dwm/.win.log", "r");
+	fscanf(winfp, "%d", &n);
+	if (n == 0) {
+		running = 0;
+	} else {
+		printf("clients running!");
+	}
 }
 
 Monitor *
