@@ -1871,15 +1871,15 @@ quit(const Arg *arg)
 	}
 
 	//running = 0;
-	int n;
+	int running_window;
 	system("lsw | wc -l > /home/dylan/prog/dwm/.win.log");
 	FILE *winfp = fopen("/home/dylan/prog/dwm/.win.log", "r");
-	fscanf(winfp, "%d", &n);
-	if (n == 0) {
+	fscanf(winfp, "%d", &running_window);
+	if (running_window == 0) {
 		running = 0;
 	} else {
 		printf("clients running!");
-		system("notify-send 'Quit failed, clients're running!'");
+		system("notify-send 'Quit failed, clients\'re running!'");
 	}
 }
 
