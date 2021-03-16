@@ -1,5 +1,5 @@
 #!/bin/sh
-choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nDDraceNetwork\nemu8086\nBurpSuiteCommunity\nDavinci Resolve\nalbion_online\nBattle_Net\nHearthstone\nRemoveQQCache\nShutdownNow\nGTA_ViceCity\nFortressEscape\nQQMusic\nMaimWindow\nGentoo"
+choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nDDraceNetwork\nemu8086\nBurpSuiteCommunity\nDavinci Resolve\nalbion_online\nBattle_Net\nHearthstone\nRemoveQQCache\nShutdownNow\nGTA_ViceCity\nFortressEscape\nQQMusic\nMaimWindow\nGentoo\nArch"
 
 chosen=$(echo -e $choices | dmenu -p "Enter the application：")
 
@@ -52,4 +52,8 @@ case $chosen in
 			-m 2G \
 			~/qemu_kvm/gentoo_image ;;
 			#-device VGA,edid=on,xres=1920,yres=1080 ;;
+	Arch)
+		qemu-system-x86_64 -enable-kvm \
+			-m 2G \
+			~/qemu_kvm/arch_image ;;
 esac
