@@ -50,8 +50,9 @@ case $chosen in
 	Gentoo)
 		qemu-system-x86_64 -enable-kvm \
 			-m 2G \
-			~/qemu_kvm/gentoo_image ;;
-			#-device VGA,edid=on,xres=1920,yres=1080 ;;
+			~/qemu_kvm/gentoo_image
+			-device VGA,edid=on,xres=1920,yres=1080
+			;;
 	Arch)
 		qemu-system-x86_64 -enable-kvm \
 			-m 2G \
