@@ -2738,7 +2738,12 @@ togglewin(const Arg *arg)
 	if (c == selmon->sel) {
 		hidewin(c);
 		focus(NULL);
+		arrange(selmon);
+		/* fix: crash on empty bar click
+		hidewin(c);
+		focus(NULL);
 		arrange(c->mon);
+		*/
 	} else {
 		if (HIDDEN(c))
 			showwin(c);
