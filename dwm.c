@@ -1871,6 +1871,9 @@ quit(const Arg *arg)
 	}
 
 	//running = 0;
+	/*
+	 * exit if only no window's running
+	 */
 	int running_window;
 	system("lsw | wc -l > /home/dylan/prog/dwm/.win.log");
 	FILE *winfp = fopen("/home/dylan/prog/dwm/.win.log", "r");
