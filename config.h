@@ -73,7 +73,7 @@ static const Rule rules[] = {
 	{ "cmus", NULL, NULL,     1 << 3,    1,             0,          0,          -1,        -1 },
 	{ "ieaseMusic", NULL, NULL,     		1 << 3,    1,             1,          0,          -1,        -1 },
 	{ "qv2ray",  NULL,     NULL,           1 << 4,    1,             0,          0,          -1,        -1 },
-	{ "Thunderbird",NULL,  NULL,           1 << 4,    1,             0,          0,          -1,        -1 },
+	{ "Thunderbird",NULL,  NULL,           1 << 4,    1,             1,          0,          -1,        -1 },
 	{ "SimpleScreenRecorder",NULL, NULL,   1 << 5,    1,             1,          0,          -1,        -1 },
 	{ "transmission",NULL, NULL,        1 << 5,    1,               1,          0,          -1,        -1 },
 	{ "Steam",NULL, NULL,           1 << 6,    1,             1,          0,          -1,        -1 },
@@ -166,16 +166,17 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Print,  spawn,          SHCMD("maim -B -i $(xdotool getactivewindow) ~/Pictures/screenshots/$(date +%F_%H-%M).png")},
 	{ ShiftMask,                    XK_Print,  spawn,          SHCMD("flameshot gui")},
 
-	{ 0,        XF86XK_AudioLowerVolume,    spawn,      SHCMD("/usr/bin/amixer -qM set Master 5%- umute; kill -36 $(pidof dwmblocks)")},
-	{ 0,        XF86XK_AudioMute,           spawn,      SHCMD("/usr/bin/amixer set Master toggle; kill -36 $(pidof dwmblocks)")},
-	{ 0,        XF86XK_AudioRaiseVolume,    spawn,      SHCMD("/usr/bin/amixer -qM set Master 5%+ umute; kill -36 $(pidof dwmblocks)")},
-
 	{ 0,        XF86XK_AudioPlay,           spawn,      SHCMD("cmus-remote --pause; kill -35 $(pidof dwmblocks)")},
 	{ 0,        XF86XK_AudioPrev,           spawn,      SHCMD("cmus-remote --prev; kill -35 $(pidof dwmblocks)")},
 	{ 0,        XF86XK_AudioNext,           spawn,      SHCMD("cmus-remote --next; kill -35 $(pidof dwmblocks)")},
 
-	{ 0,        XF86XK_MonBrightnessUp,     spawn,      SHCMD("xbacklight -inc 10")},
-	{ 0,        XF86XK_MonBrightnessDown,   spawn,      SHCMD("xbacklight -dec 10")},
+	{ 0,        XF86XK_AudioLowerVolume,    spawn,      SHCMD("/usr/bin/amixer -qM set Master 5%- umute; kill -36 $(pidof dwmblocks)")},
+	{ 0,        XF86XK_AudioMute,           spawn,      SHCMD("/usr/bin/amixer set Master toggle; kill -36 $(pidof dwmblocks)")},
+	{ 0,        XF86XK_AudioRaiseVolume,    spawn,      SHCMD("/usr/bin/amixer -qM set Master 5%+ umute; kill -36 $(pidof dwmblocks)")},
+
+
+	{ 0,        XF86XK_MonBrightnessUp,     spawn,      SHCMD("xbacklight -inc 10; kill -38 $(pidof dwmblocks)")},
+	{ 0,        XF86XK_MonBrightnessDown,   spawn,      SHCMD("xbacklight -dec 10; kill -38 $(pidof dwmblocks)")},
 
     { MODKEY|ControlMask,           XK_l,      spawn,         SHCMD("slock")},
     //{ MODKEY,                       XK_w,      spawn,         SHCMD("mpv --no-cache --no-osc --no-input-default-bindings --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)")},
