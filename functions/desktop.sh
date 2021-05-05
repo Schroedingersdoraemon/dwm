@@ -1,5 +1,5 @@
 #!/bin/sh
-choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nDDraceNetwork\nemu8086\nBurpSuiteCommunity\nDavinci Resolve\nalbion_online\nBattle_Net\nHearthstone\nRemoveQQCache\nShutdownNow\nGTA_ViceCity\nFortressEscape\nQQMusic\nMaimWindow\nGentoo\nArch"
+choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nDDraceNetwork\nemu8086\nBurpSuiteCommunity\nDavinci Resolve\nalbion_online\nBattle_Net\nHearthstone\nRemoveQQCache\nShutdownNow\nGTA_ViceCity\nFortressEscape\nQQMusic\nMaimWindow\nGentoo\nArch\npvz"
 
 chosen=$(echo -e $choices | dmenu -p "Enter the application：")
 
@@ -57,4 +57,6 @@ case $chosen in
 		qemu-system-x86_64 -enable-kvm \
 			-m 2G \
 			~/qemu_kvm/arch_image ;;
+	pvz)
+		cd ~/Games/pvz_goty/ && wine ./PlantsVsZombies.exe ;;
 esac
