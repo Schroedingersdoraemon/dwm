@@ -1,5 +1,5 @@
 #!/bin/sh
-choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nDDraceNetwork\nemu8086\nBurpSuiteCommunity\nDavinci Resolve\nalbion_online\nBattle_Net\nHearthstone\nRemoveQQCache\nShutdownNow\nGTA_ViceCity\nFortressEscape\nQQMusic\nMaimWindow\nGentoo\nArch\npvz"
+choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nDDraceNetwork\nemu8086\nBurpSuiteCommunity\nDavinci Resolve\nalbion_online\nBattle_Net\nHearthstone\nRemoveQQCache\nShutdownNow\nGTA_ViceCity\nFortressEscape\nQQMusic\nMaimWindow\nGentoo\nArch\npvz\npyftpd"
 
 chosen=$(echo -e $choices | dmenu -p "Enter the application：")
 
@@ -59,4 +59,6 @@ case $chosen in
 			~/qemu_kvm/arch_image ;;
 	pvz)
 		cd ~/Games/pvz_goty/ && wine ./PlantsVsZombies.exe ;;
+	pyftpd)
+		/usr/bin/python $HOME/scripts/ftp/ftp_exec.py ;;
 esac
