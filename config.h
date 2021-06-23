@@ -132,8 +132,6 @@ static Key keys[] = {
 
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 
-	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("st -c cmus cmus; kill -35 $(pidof dwmblocks)") },
-
 	{ MODKEY,                       XK_BackSpace,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 
