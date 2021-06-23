@@ -126,9 +126,6 @@ static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x25", NULL };
 
-// select an emoji
-static const char *emojicmd[] = { "/home/dylan/prog/dwm/functions/emoji.sh" };
-
 // desktop support for dmenu
 static const char *dmenudesktopcmd[] = { "/home/dylan/prog/dwm/functions/desktop.sh" };
 
@@ -136,7 +133,6 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ Mod1Mask,                     XK_d,      spawn,          {.v = dmenucmd } },
     { Mod1Mask,                     XK_a,      spawn,          {.v = dmenudesktopcmd} },
-    { Mod1Mask,                     XK_e,      spawn,          {.v = emojicmd} },
     { Mod1Mask,                     XK_r,      spawn,          SHCMD("rofi -show drun") },
 
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
