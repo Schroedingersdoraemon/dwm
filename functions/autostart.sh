@@ -12,3 +12,5 @@ nm-applet &
 gnome-pie &
 
 dunst &
+
+sxhkd &
