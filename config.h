@@ -129,7 +129,6 @@ static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x25"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ Mod1Mask,                     XK_d,      spawn,          {.v = dmenucmd } },
-    { Mod1Mask,                     XK_r,      spawn,          SHCMD("rofi -show drun") },
 
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 
