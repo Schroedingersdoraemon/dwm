@@ -152,10 +152,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 
-	{ 0,                            XK_Print,  spawn,          SHCMD("flameshot full -p ~/screenshots")},
-	{ MODKEY,                       XK_Print,  spawn,          SHCMD("maim -B -i $(xdotool getactivewindow) ~/Pictures/screenshots/$(date +%F_%H-%M).png")},
-	{ ShiftMask,                    XK_Print,  spawn,          SHCMD("flameshot gui")},
-
 	{ 0,        XF86XK_AudioPlay,           spawn,      SHCMD("bash /home/dylan/prog/dwm/functions/music_control.sh pause; kill -35 $(pidof dwmblocks)")},
 	{ 0,        XF86XK_AudioPrev,           spawn,      SHCMD("bash /home/dylan/prog/dwm/functions/music_control.sh prev; kill -35 $(pidof dwmblocks)")},
 	{ 0,        XF86XK_AudioNext,           spawn,      SHCMD("bash /home/dylan/prog/dwm/functions/music_control.sh next; kill -35 $(pidof dwmblocks)")},
