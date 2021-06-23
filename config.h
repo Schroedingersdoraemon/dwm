@@ -152,7 +152,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 
-    { MODKEY|ControlMask,           XK_l,      spawn,         SHCMD("slock")},
     //{ MODKEY,                       XK_w,      spawn,         SHCMD("mpv --no-cache --no-osc --no-input-default-bindings --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)")},
     { MODKEY,                       XK_w,      spawn,         SHCMD("mpv av://v4l2:/dev/video0 --profile=low-latency --untimed")},
 
