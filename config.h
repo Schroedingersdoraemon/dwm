@@ -152,10 +152,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 
-	{ 0,        XF86XK_AudioPlay,           spawn,      SHCMD("bash /home/dylan/prog/dwm/functions/music_control.sh pause; kill -35 $(pidof dwmblocks)")},
-	{ 0,        XF86XK_AudioPrev,           spawn,      SHCMD("bash /home/dylan/prog/dwm/functions/music_control.sh prev; kill -35 $(pidof dwmblocks)")},
-	{ 0,        XF86XK_AudioNext,           spawn,      SHCMD("bash /home/dylan/prog/dwm/functions/music_control.sh next; kill -35 $(pidof dwmblocks)")},
-
 	{ 0,        XF86XK_AudioLowerVolume,    spawn,      SHCMD("/usr/bin/amixer -qM set Master 5%- umute; kill -36 $(pidof dwmblocks)")},
 	{ 0,        XF86XK_AudioMute,           spawn,      SHCMD("/usr/bin/amixer set Master toggle; kill -36 $(pidof dwmblocks)")},
 	{ 0,        XF86XK_AudioRaiseVolume,    spawn,      SHCMD("/usr/bin/amixer -qM set Master 5%+ umute; kill -36 $(pidof dwmblocks)")},
