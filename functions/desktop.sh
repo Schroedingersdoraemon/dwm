@@ -1,5 +1,5 @@
 #!/bin/sh
-choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nDDraceNetwork\nemu8086\nBurpSuiteCommunity\nDavinci Resolve\nalbion_online\nBattle_Net\nHearthstone\nRemoveQQCache\nShutdownNow\nGTA_ViceCity\nFortressEscape\nQQMusic\nMaimWindow\nGentoo\nArch\npvz\npyftpd"
+choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nDDraceNetwork\nemu8086\nBurpSuiteCommunity\nDavinci Resolve\nalbion_online\nBattle_Net\nHearthstone\nRemoveQQCache\nShutdownNow\nGTA_ViceCity\nFortressEscape\nQQMusic\nMaimWindow\nGentoo\nArch\npvz\npyftpd\nDunst\nNotion"
 
 chosen=$(echo -e $choices | dmenu -p "Enter the application：")
 
@@ -61,4 +61,8 @@ case $chosen in
 		cd ~/Games/pvz_goty/ && wine ./PlantsVsZombies.exe ;;
 	pyftpd)
 		/usr/bin/python $HOME/scripts/ftp/ftp_exec.py ;;
+	Dunst)
+		dunst -config $HOME/.config/dunst/dunstrc_dracula > /dev/null 2>&1 ;;
+	Notion)
+		/opt/Notion/notion-app > /dev/null 2>&1 ;;
 esac
