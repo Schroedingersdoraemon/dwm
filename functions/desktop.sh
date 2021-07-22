@@ -48,15 +48,14 @@ case $chosen in
 	MaimWindow)
 		maim -s | convert - \( +clone -background black -shadow 80x3+5+5 \) +swap -background none -layers merge +repage ~/Pictures/screenshots/$(date +%F_%H-%M).png ;;
 	Gentoo)
-		qemu-system-x86_64 -enable-kvm \
+		qemu-system-x86_64\
 			-m 2G \
-			~/qemu_kvm/gentoo_image
+			-enable-kvm \
+			-cpu host \
+			-smp 4 \
+			$HOME/workspace/qemus/gentoo_image \
 			-device VGA,edid=on,xres=1920,yres=1080
 			;;
-	Arch)
-		qemu-system-x86_64 -enable-kvm \
-			-m 2G \
-			~/qemu_kvm/arch_image ;;
 	pvz)
 		cd ~/Games/pvz_goty/ && wine ./PlantsVsZombies.exe ;;
 	pyftpd)
