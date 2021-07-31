@@ -1,6 +1,8 @@
 #!/bin/bash
 
 ~/scripts/backgrounds/backgrounds.sh &
+#$HOME/.local/bin/anime_wall.sh > /dev/null 2>&1 &
+
 dwmblocks &
 
 picom &
