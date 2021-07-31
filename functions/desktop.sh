@@ -1,5 +1,5 @@
 #!/bin/sh
-choices="Anaconda Navigator\nQQ\nWeChat\nBaiduNetdisk\nDDraceNetwork\nemu8086\nBurpSuiteCommunity\nDavinci Resolve\nalbion_online\nBattle_Net\nHearthstone\nRemoveQQCache\nShutdownNow\nGTA_ViceCity\nFortressEscape\nQQMusic\nMaimWindow\nGentoo\nArch\npvz\npyftpd\nDunst\nNotion"
+choices="BaiduNetdisk\nBurpSuiteCommunity\nRemoveQQCache\nShutdownNow\nGTA_ViceCity\nFortressEscape\nMaimWindow\nGentoo\npvz\npyftpd\nDunst\nNotion\nAnimated_Wallpaper"
 
 chosen=$(echo -e $choices | dmenu -p "Enter the application：")
 
@@ -20,21 +20,8 @@ case $chosen in
         #env LANG=zh_CN.UTF-8 WINEDEBUG=-all,+fps wine "~/.wine/drive_c/Program Files/Tencent/WeChat/WeChat.exe" ;;
     BaiduNetdisk)
         /usr/lib/baidunetdisk/baidunetdisk --no-sandbox %U ;;
-    Anaconda\ Navigator)
-        /opt/anaconda/bin/anaconda-navigator ;;
-    emu8086)
-        WINEARCH=win32 WINEPREFIX=~/.wine32 wine ~/.wine32/drive_c/emu8086/emu8086.exe ;;
 	BurpSuiteCommunity)
 		/opt/BurpSuiteCommunity/BurpSuiteCommunity ;;
-	Davinci\ Resolve)
-		/opt/resolve/bin/resolve ;;
-	albion_online)
-		~/Games/albion_online/Albion-Online ;;
-		#~/Games/albion_online/launcher/Albion-Online ;;
-	Battle_Net)
-		wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Battle.net/Battle.net.exe ;;
-	Hearthstone)
-		wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Hearthstone/Hearthstone.exe ;;
 	RemoveQQCache)
 		rm -r ~/.config/tencent-qq/ ;;
 	ShutdownNow)
@@ -43,8 +30,6 @@ case $chosen in
 		cd ~/SteamLibrary/steamapps/common/Grand\ Theft\ Auto\ Vice\ City && ./reVC ;;
 	FortressEscape)
 		~/Games/FortressEscape/FortressEscape.x86 ;;
-	QQMusic)
-		~/prog/QQmusic-1.0.6.AppImage ;;
 	MaimWindow)
 		maim -s | convert - \( +clone -background black -shadow 80x3+5+5 \) +swap -background none -layers merge +repage ~/Pictures/screenshots/$(date +%F_%H-%M).png ;;
 	Gentoo)
@@ -54,7 +39,11 @@ case $chosen in
 			-cpu host \
 			-smp 4 \
 			$HOME/workspace/qemus/gentoo_image \
-			-device VGA,edid=on,xres=1920,yres=1080
+			# -netdev user \
+			#-device virtio-net,netdev=vmnic -netdev user,id=vmnic \
+			-device VGA,edid=on,xres=1920,yres=1080 \
+			#-device VGA,edid=on,xres=1280,yres=720 \
+			> /dev/null 2>&1
 			;;
 	pvz)
 		cd ~/Games/pvz_goty/ && wine ./PlantsVsZombies.exe ;;
@@ -64,4 +53,6 @@ case $chosen in
 		dunst -config $HOME/.config/dunst/dunstrc_dracula > /dev/null 2>&1 ;;
 	Notion)
 		/opt/Notion/notion-app > /dev/null 2>&1 ;;
+	Animated_Wallpaper)
+		$HOME/scripts/backgrounds/anime_wall.sh > /dev/null 2>&1 & ;;
 esac
