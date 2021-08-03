@@ -1,5 +1,5 @@
 #!/bin/sh
-choices="BaiduNetdisk\nBurpSuiteCommunity\nRemoveQQCache\nShutdownNow\nGTA_ViceCity\nFortressEscape\nMaimWindow\nGentoo\npvz\npyftpd\nDunst\nNotion\nAnimated_Wallpaper"
+choices="BaiduNetdisk\nBurpSuiteCommunity\nRemoveQQCache\nShutdownNow\nGTA_ViceCity\nFortressEscape\nMaimWindow\nGentoo\npvz\npyftpd\nDunst\nNotion\nAnimated_Wallpaper\nHibernate"
 
 chosen=$(echo -e $choices | dmenu -p "Enter the application：")
 
@@ -55,4 +55,7 @@ case $chosen in
 		/opt/Notion/notion-app > /dev/null 2>&1 ;;
 	Animated_Wallpaper)
 		$HOME/scripts/backgrounds/anime_wall.sh > /dev/null 2>&1 & ;;
+	Hibernate)
+		pkexec sudo systemctl hibernate ;;
+		# $HOME/scripts
 esac
