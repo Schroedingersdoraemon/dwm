@@ -56,6 +56,6 @@ case $chosen in
 	Animated_Wallpaper)
 		$HOME/scripts/backgrounds/anime_wall.sh > /dev/null 2>&1 & ;;
 	Hibernate)
-		pkexec sudo systemctl hibernate ;;
+		pkexec systemctl hibernate ;;
 		# $HOME/scripts
 esac
