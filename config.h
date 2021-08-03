@@ -25,12 +25,21 @@ static const char *fonts[]          = {
     "Kaiti-Regular:size=12:antialias=true:autohint=true",
     "JoyPixels:pixelsize=15:antialias=true:autohint=true"
 };
+
+/* old dark scheme
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#343434";
 //static const char col_cyan[]        = "#37474F";
+*/
+
+static const char col_gray1[]       = "#ffffff";
+static const char col_gray2[]       = "#bbbbbb";
+static const char col_gray3[]       = "#000000";
+static const char col_gray4[]       = "#000000";
+static const char col_cyan[]        = "#aaaaaa";
 
 static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
