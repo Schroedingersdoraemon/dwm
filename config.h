@@ -60,7 +60,7 @@ static const XPoint stickyiconbb    = {4,4};	/* defines the bottom right corner 
 
 /* tagging */
 //static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const char *tags[] = { "", "", "🪐", "", "", "", "", "", "" };
+static const char *tags[] = { "", "", "", "", "", "", "ﳟ", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
