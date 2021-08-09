@@ -11,6 +11,6 @@ nm-applet > /dev/null 2>&1 &
 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 > /dev/null 2>&1 &
 
-dunst -config ~/.config/dunst/dunstrc_dracula > /dev/null 2>&1 &
+dunst -config ~/.config/dunst/dunstrc_mac > /dev/null 2>&1 &
 
 sxhkd > /dev/null 2>&1 &
