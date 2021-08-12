@@ -1,5 +1,5 @@
 #!/bin/sh
-choices="BaiduNetdisk\nBurpSuiteCommunity\nRemoveQQCache\nShutdownNow\nGTA_ViceCity\nFortressEscape\nMaimWindow\nGentoo\npvz\npyftpd\nDunst\nNotion\nAnimated_Wallpaper\nHibernate\nX11VNCServer"
+choices="BaiduNetdisk\nBurpSuiteCommunity\nRemoveQQCache\nShutdownNow\nGTA_ViceCity\nFortressEscape\nMaimWindow\nGentoo\npvz\npyftpd\npyftpd_ip\nDunst\nNotion\nAnimated_Wallpaper\nHibernate\nX11VNCServer"
 
 chosen=$(echo -e $choices | dmenu -p "Enter the application：")
 
@@ -38,6 +38,8 @@ case $chosen in
 		cd $HOME/Games/pvz_goty/ && wine ./PlantsVsZombies.exe ;;
 	pyftpd)
 		/usr/bin/python $HOME/scripts/ftp/ftp_exec.py ;;
+	pyftpd_ip)
+		/usr/bin/python $HOME/scripts/ftp/ftp_exec.py ip ;;
 	Dunst)
 		dunst -config $HOME/.config/dunst/dunstrc_dracula > /dev/null 2>&1 ;;
 	Notion)
