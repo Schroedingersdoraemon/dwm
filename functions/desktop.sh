@@ -49,6 +49,6 @@ case $chosen in
 	Hibernate)
 		pkexec systemctl hibernate ;;
 	X11VNCServer)
-		x11vnc -rfbauth $HOME/.config/vnc_pass > /dev/null 2>&1 &;;
+		x11vnc -rfbauth $HOME/.config/vnc_pass -forever > /dev/null 2>&1 &;;
 
 esac
