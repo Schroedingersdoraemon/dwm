@@ -1,5 +1,5 @@
 #!/bin/sh
-choices="BaiduNetdisk\nBurpSuiteCommunity\nRemoveQQCache\nShutdownNow\nGTA_ViceCity\nFortressEscape\nMaimWindow\nGentoo\npvz\npyftpd\npyftpd_ip\nDunst\nNotion\nAnimated_Wallpaper\nHibernate\nX11VNCServer"
+choices="BaiduNetdisk\nBurpSuiteCommunity\nRemoveQQCache\nShutdownNow\nGTA_ViceCity\nFortressEscape\nMaimWindow\nGentoo\npvz\npyftpd\npyftpd_ip\nDunst\nNotion\nAnimated_Wallpaper\nHibernate\nX11VNCServer\nGitochen"
 
 chosen=$(echo -e $choices | dmenu -p "Enter the application：")
 
@@ -50,5 +50,7 @@ case $chosen in
 		pkexec systemctl hibernate ;;
 	X11VNCServer)
 		x11vnc -rfbauth $HOME/.config/vnc_pass -forever > /dev/null 2>&1 &;;
+	Gitochen)
+		cat $HOME/.gitochen | base64 -d | xclip -selection clipboard ;;
 
 esac
