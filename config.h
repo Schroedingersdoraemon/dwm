@@ -81,6 +81,7 @@ static const Rule rules[] = {
 	{ "qqmusic",NULL,NULL,     				1 << 3,    1,             1,          0,          -1,        -1 },
 	{ "cmus", NULL, NULL,     1 << 3,    1,             0,          0,          -1,        -1 },
 	{ "ieaseMusic", NULL, NULL,     		1 << 3,    1,             1,          0,          -1,        -1 },
+	{ "GoldenDict",  NULL,     NULL,           1 << 4,    1,             0,          0,          -1,        -1 },
 	{ "qv2ray",  NULL,     NULL,           1 << 4,    1,             0,          0,          -1,        -1 },
 	{ "Thunderbird",NULL,  NULL,           1 << 4,    1,             1,          0,          -1,        -1 },
 	{ "SimpleScreenRecorder",NULL, NULL,   1 << 5,    1,             1,          0,          -1,        -1 },
