@@ -2,7 +2,7 @@
 #include<X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx  = 0;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating    = 1;        /* 1 means swallow floating windows by default */
 static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
@@ -22,7 +22,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const char *fonts[]          = {
 	"SauceCodePro Nerd Font Mono:size=13:antialias=true:autohint=true",
-	"Kaiti-Regular:size=12:antialias=true:autohint=true",
+	"LXGW WenKai:size=12:antialias=true:autohint=true",
 	"JoyPixels:pixelsize=15:antialias=true:autohint=true"
 };
 
