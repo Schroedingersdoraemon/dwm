@@ -22,18 +22,19 @@ case $chosen in
 	MaimWindow)
 		maim -s | convert - \( +clone -background black -shadow 80x3+5+5 \) +swap -background none -layers merge +repage $HOME/Pictures/screenshots/$(date +%F_%H-%M).png ;;
 	Gentoo)
-		qemu-system-x86_64\
-			-m 2G \
-			-enable-kvm \
-			-cpu host \
-			-smp 4 \
-			$HOME/workspace/qemus/gentoo_image \
-			# -netdev user \
-			#-device virtio-net,netdev=vmnic -netdev user,id=vmnic \
-			-device VGA,edid=on,xres=1920,yres=1080 \
-			#-device VGA,edid=on,xres=1280,yres=720 \
-			> /dev/null 2>&1
-			;;
+		bash $HOME/scripts/gentoo.sh ;;
+	#	qemu-system-x86_64\
+	#		-m 2G \
+	#		-enable-kvm \
+	#		-cpu host \
+	#		-smp 4 \
+	#		$HOME/workspace/qemus/gentoo_image \
+	#		# -netdev user \
+	#		#-device virtio-net,netdev=vmnic -netdev user,id=vmnic \
+	#		-device VGA,edid=on,xres=1920,yres=1080 \
+	#		#-device VGA,edid=on,xres=1280,yres=720 \
+	#		> /dev/null 2>&1
+	#		;;
 	pvz)
 		cd $HOME/Games/pvz_goty/ && wine ./PlantsVsZombies.exe ;;
 	pyftpd)
