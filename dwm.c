@@ -255,7 +255,7 @@ static void resizerequest(XEvent *e);
 static void restack(Monitor *m);
 static void rotatestack(const Arg *arg);
 static void run(void);
-static void runAutostart(void);
+// static void runAutostart(void);
 static void scan(void);
 static int sendevent(Window w, Atom proto, int m, long d0, long d1, long d2, long d3, long d4);
 static void sendmon(Client *c, Monitor *m);
@@ -1876,10 +1876,9 @@ quit(const Arg *arg)
 		}
 	}
 
-	//running = 0;
+	running = 0;
 	/*
 	 * exit if only no window's running
-	 */
 	int running_window;
 	system("lsw | wc -l > /home/dylan/prog/dwm/.win.log");
 	FILE *winfp = fopen("/home/dylan/prog/dwm/.win.log", "r");
@@ -1890,6 +1889,7 @@ quit(const Arg *arg)
 		printf("clients running!");
 		system("notify-send 'Quit failed, clients\'re running!'");
 	}
+	 */
 }
 
 Monitor *
@@ -2095,10 +2095,12 @@ run(void)
 			handler[ev.type](&ev); /* call handler */
 }
 
+/*
 void
 runAutostart(void) {
 	system("~/prog/dwm/functions/autostart.sh &");
 }
+*/
 
 void
 scan(void)
@@ -3504,7 +3506,7 @@ main(int argc, char *argv[])
 		die("pledge");
 #endif /* __OpenBSD__ */
 	scan();
-	runAutostart();
+	// runAutostart();
 	run();
 	cleanup();
 	XCloseDisplay(dpy);
