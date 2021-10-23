@@ -1,5 +1,5 @@
 #!/bin/sh
-choices="BaiduNetdisk\nBurpSuiteCommunity\nRemoveQQCache\nShutdownNow\nGTA_ViceCity\nFortressEscape\nMaimWindow\nGentoo\npvz\npyftpd\npyftpd_ip\nDunst\nNotion\nAnimated_Wallpaper\nHibernate\nX11VNCServer\nGitochen"
+choices="BaiduNetdisk\nBurpSuiteCommunity\nRemoveQQCache\nShutdownNow\nGTA_ViceCity\nFortressEscape\nMaimWindow\nGentoo\npvz\npyftpd\npyftpd_ip\nDunst\nNotion\nAnimated_Wallpaper\nHibernate\nX11VNCServer\nGitochen\nCawbird"
 
 chosen=$(echo -e $choices | dmenu -p "Enter the application：")
 
@@ -53,5 +53,7 @@ case $chosen in
 		x11vnc -rfbauth $HOME/.config/vnc_pass -forever > /dev/null 2>&1 &;;
 	Gitochen)
 		cat $HOME/.gitochen | base64 -d | xclip -selection clipboard ;;
+	Cawbird)
+		proxychains -q /usr/bin/cawbird ;;
 
 esac
