@@ -94,6 +94,7 @@ static const Rule rules[] = {
 	{ NULL,     "tim.exe",   NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
 	{ "electron-qq",  NULL, NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
 	{ "icalingua",  NULL, NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
+	{ "Cawbird",  NULL, NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
 	{ "electronic-wechat",  NULL, NULL,    1 << 8,    1,             1,          0,          -1,        -1 },
 	{ "Qq",  NULL, NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
 	{ "TelegramDesktop",NULL,NULL,         1 << 8,    1,             1,          0,          -1,        -1 },
