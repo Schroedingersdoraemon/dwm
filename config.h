@@ -78,25 +78,25 @@ static const Rule rules[] = {
 	{ "Brave",   NULL,     NULL,           1 << 1,    1,             0,          0,          -1,        -1 },
 	{ "Surf",    NULL,     NULL,           0,         0,             0,          0,           1,        -1 },
 	{ "netease-cloud-music",NULL,NULL,     1 << 3,    1,             1,          0,          -1,        -1 },
-	{ "qqmusic",NULL,NULL,     		1 << 3,    1,             1,          0,          -1,        -1 },
-	{ "cmus", NULL, NULL,     		1 << 3,    1,             0,          0,          -1,        -1 },
-	{ "ieaseMusic", NULL, NULL,     	1 << 3,    1,             1,          0,          -1,        -1 },
-	{ "GoldenDict",  NULL,     NULL,        1 << 4,    1,             0,          0,          -1,        -1 },
+	{ "qqmusic",NULL,NULL,     	       1 << 3,    1,             1,          0,          -1,        -1 },
+	{ "cmus", NULL, NULL,     	       1 << 3,    1,             0,          0,          -1,        -1 },
+	{ "ieaseMusic", NULL, NULL,            1 << 3,    1,             1,          0,          -1,        -1 },
+	{ "GoldenDict",  NULL,     NULL,       1 << 4,    1,             0,          0,          -1,        -1 },
 	{ "qv2ray",  NULL,     NULL,           1 << 4,    1,             0,          0,          -1,        -1 },
 	{ "Thunderbird",NULL,  NULL,           1 << 4,    1,             1,          0,          -1,        -1 },
 	{ "SimpleScreenRecorder",NULL, NULL,   1 << 5,    1,             1,          0,          -1,        -1 },
-	{ "transmission",NULL, NULL,        1 << 5,    1,               1,          0,          -1,        -1 },
-	{ "qBittorrent",NULL, NULL,        1 << 5,    1,               0,          0,          -1,        -1 },
-	{ "Steam",NULL, NULL,           	1 << 6,    1,             1,          0,          -1,        -1 },
+	{ "transmission",NULL, NULL,           1 << 5,    1,             1,          0,          -1,        -1 },
+	{ "qBittorrent",NULL, NULL,            1 << 5,    1,             0,          0,          -1,        -1 },
+	{ "Steam",NULL, NULL,                  1 << 6,    1,             1,          0,          -1,        -1 },
 	{ "baidunetdisk",NULL, NULL,           1 << 7,    1,             1,          0,          -1,        -1 },
 	{ "qq.exe",  NULL,     NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
-	{ NULL,     "qq.exe",   NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
-	{ NULL,     "tim.exe",   NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
-	{ "electron-qq",  NULL, NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
-	{ "icalingua",  NULL, NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
-	{ "Cawbird",  NULL, NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
+	{ NULL,    "qq.exe",   NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
+	{ NULL,   "tim.exe",   NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
+	{ "electron-qq", NULL, NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
+	{ "icalingua",   NULL, NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
+	{ "Cawbird",     NULL, NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
 	{ "electronic-wechat",  NULL, NULL,    1 << 8,    1,             1,          0,          -1,        -1 },
-	{ "Qq",  NULL, NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
+	{ "Qq",          NULL, NULL,           1 << 8,    1,             1,          0,          -1,        -1 },
 	{ "TelegramDesktop",NULL,NULL,         1 << 8,    1,             1,          0,          -1,        -1 },
 	{ "st",      NULL,     NULL,           0,         0,             0,          1,          -1,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,             1,          0,           1,        -1 }, /* xev */
@@ -133,7 +133,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char dmenufont[]       = "SauceCodePro Nerd Font Mono:size=15";
 static const char *dmenucmd[] = { "dmenu_run" };
 //static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", "#37474F", "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
 
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x25", NULL };
